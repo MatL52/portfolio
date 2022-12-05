@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon2.ico" type="image/vnd.microsoft.icon">
+    <title>Mami's Portfolio</title>
+</head>
+<body>
+    <header>
+        <nav class="header-nav" ID="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#about">About</a></li>
+                <li class="nav-item"><a href="#works">Works</a></li>
+                <li class="nav-item"><a href="#skill">Skill</a></li>
+            </ul>
+        </nav>
+        <div class="sp-ham"><span></span><span></span><span></span></div>
+        <div ID="top">
+            <div></div>
+            <h1>
+                <span>welcome to</span><br>
+                <span>mami nishimura's</span><br>
+                <span>Portfolio</span>
+            </h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2 class="about-title">
+                <span>A</span>
+                <span>B</span>
+                <span>O</span>
+                <span>U</span>
+                <span>T</span>
+            </h2>
+            <div class="about-main slide">
+                <img src="./img/IMG_04150.JPG" alt="">
+                <div class="about-para slide">
+                    <p>当Webサイトポートフォリオをご覧いただき、ありがとうございます。</p>
+                    <p>可愛いサイトや綺麗なサイトが好きですが、スタイリッシュなサイトなどもうんぬんかんぬん</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="works">
+            <h2 class="works-title">
+                <span>W</span>
+                <span>O</span>
+                <span>R</span>
+                <span>K</span>
+                <span>S</span>
+            </h2>
+            <div class="slide">
+                <ul class="works-list">
+                    <li class="works-item">
+                        <a href="../マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
+                        <p>Macamacaron</p>
+                        <p>メインページと商品一覧ページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
+                    </li>
+                    <li class="works-item">
+                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
+                        <p>作品名が入る</p>
+                        <p>あとなんか</p>
+                    </li>
+                    <li class="works-item">
+                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
+                        <p>作品名が入る</p>
+                        <p>あとなんか</p>
+                    </li>
+                    <li class="works-item">
+                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
+                        <p>作品名が入る</p>
+                        <p>あとなんか</p>
+                    </li>
+                    <li class="works-item">
+                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
+                        <p>作品名が入る</p>
+                        <p>あとなんか</p>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+        <section id="skill">
+            <h2 class="skill-title">
+                <span>S</span>
+                <span>K</span>
+                <span>I</span>
+                <span>L</span>
+                <span>L</span>
+            </h2>
+            <div class="slide">
+                text
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="topbtn">
+            <a href="#top">^</a>
+        </div>
+
+        <div class="bar"></div>
+        <div class="copy">
+            <small>©Mami Nishimura</small>
+        </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!--Google提供のjQueryはこんな書き方-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--Microsoft提供のjQueryはこんな書き方-->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
+
+<script>
+// 少しスクロールするとheaderナビゲーションの色とサイズが変わる
+
+$(function () {
+        $(window).on('scroll', function () {
+            if ($('.header-nav').height()  < $(this).scrollTop()) {
+                $('.header-nav').addClass('header-js');
+            } else {
+                $('.header-nav').removeClass('header-js');
+            }
+    });
+
+    function responsive() {
+    var w = $(window).width();
+    if ( w <= 460 ) {
+      $.fn.fullpage.setResponsive(true);
+    } else {
+      $.fn.fullpage.setResponsive(false);
+    }
+  }
+});
+
+
+// ナビゲーションリンクを押したら滑らかに移動する
+$(function() {
+  if (window.matchMedia("(max-width: 460px)").matches) {
+    $('nav a, .topbtn a').click(function(){
+            var elmHash = $(this).attr('href');
+            var pos = $(elmHash).offset().top;
+            $('body,html').animate({scrollTop:pos},500);
+            return false
+        });
+  } else {
+    $('nav a, .topbtn a').click(function(){
+            var elmHash = $(this).attr('href');
+            var headerH = $(nav).outerHeight(true);
+            var pos = $(elmHash).offset().top -headerH;
+            $('body,html').animate({scrollTop:pos},500);
+            return false
+        });
+  };
+});
+
+// スクロールしたら途中からトップボタンが現れる
+$(window).scroll(function(){
+            PageTopAnime()//;
+        });
+
+function PageTopAnime() {
+            var scroll = $(window).scrollTop();
+            var aboutPosition = $('#about').offset().top;
+            var windowHeihgt = $(window).height(); // ウィンドウの高さ
+            if (scroll > aboutPosition - windowHeihgt +200 ) {//上から200pxスクロールしたら
+                $('.topbtn').removeClass('DownMove');//.topbtnについているDownMoveというクラス名を除く
+                $('.topbtn').addClass('UpMove');//.topbtnについているUpMoveというクラス名を付与
+
+
+            } else {
+                if ($('.topbtn').hasClass('UpMove')) {//すでに.topbtnにUpMoveというクラス名がついていたら
+                    $('.topbtn').removeClass('UpMove');//UpMoveというクラス名を除き
+                    $('.topbtn').addClass('DownMove');//DownMoveというクラス名を.topbtnに付与
+                }
+            }
+
+// フッター上までの表示
+            var wH = window.innerHeight;
+            var footerPos = $('footer').offset().top;
+            if(scroll+wH >= (footerPos+10)){
+                var pos = (scroll + wH ) - footerPos + 10
+                $('.topbtn').css('bottom', pos);
+            }
+            else{
+                if($('.topbtn').hasClass('UpMove')){
+                    $('.topbtn').css('bottom','10px');
+                }
+            }
+        }
+
+
+// セクションに偶数奇数ごとにトランスレート座標をつける
+
+$(function(){
+        $('section div:even').addClass('sectionEVEN');
+        $('section div:odd').addClass('sectionODD');
+});
+
+
+// スクロールして読み込んだらメインテキスト部ブラー表示
+$(function() {
+  // ↓windowがスクロールされた時に実行する処理
+  $(window).scroll(function() {
+    // ↓複数のオブジェクトに対して繰り返し処理を行う
+    $(".slide").each(function() {
+      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+      var windowHeihgt = $(window).height(); // ウィンドウの高さ
+      // ↓if式で計算する流れ----------
+      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+      if (scroll > blockPosition - windowHeihgt + 300) {
+        $(this).addClass("blockIn");
+      }
+
+    });
+  });
+});
+
+$(function() {
+  // ↓windowがスクロールされた時に実行する処理
+  $(window).scroll(function() {
+    // ↓複数のオブジェクトに対して繰り返し処理を行う
+    $(".about-title span").each(function(i) {
+      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+      var windowHeihgt = $(window).height(); // ウィンドウの高さ
+      // ↓if式で計算する流れ----------
+      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+      if (scroll > blockPosition - windowHeihgt + 100) {
+        $(this).delay(i*150).queue(function(next){
+            $(this).addClass("active");
+            next();
+        });
+      }
+
+    });
+  });
+});
+
+$(function() {
+  // ↓windowがスクロールされた時に実行する処理
+  $(window).scroll(function() {
+    // ↓複数のオブジェクトに対して繰り返し処理を行う
+    $(".works-title span").each(function(i) {
+      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+      var windowHeihgt = $(window).height(); // ウィンドウの高さ
+      // ↓if式で計算する流れ----------
+      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+      if (scroll > blockPosition - windowHeihgt + 100) {
+        $(this).delay(i*150).queue(function(next){
+            $(this).addClass("active");
+            next();
+        });
+      }
+
+    });
+  });
+});
+
+$(function() {
+  // ↓windowがスクロールされた時に実行する処理
+  $(window).scroll(function() {
+    // ↓複数のオブジェクトに対して繰り返し処理を行う
+    $(".skill-title span").each(function(i) {
+      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+      var windowHeihgt = $(window).height(); // ウィンドウの高さ
+      // ↓if式で計算する流れ----------
+      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+      if (scroll > blockPosition - windowHeihgt + 100) {
+        $(this).delay(i*150).queue(function(next){
+            $(this).addClass("active");
+            next();
+        });
+      }
+
+    });
+  });
+});
+
+// レスポンシブ sp用
+// ハンバーガーMenu
+$(".sp-ham").click(function () {//ボタンがクリックされたら
+    $(this).toggleClass('opn-ham');//ボタン自身に activeクラスを付与し
+    $("#nav").toggleClass('navactive');//ナビゲーションにpanelactiveクラスを付与
+});
+
+$(".nav-item a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".sp-ham").removeClass('opn-ham');//ボタンの activeクラスを除去し
+    $("#nav").removeClass('navactive');//ナビゲーションのpanelactiveクラスも除去
+});
+
+
+
+</script>
+
+</body>
+</html>
