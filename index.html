@@ -15,8 +15,8 @@
         <nav class="header-nav" ID="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#works">Works</a></li>
                 <li class="nav-item"><a href="#skill">Skill</a></li>
+                <li class="nav-item"><a href="#works">Works</a></li>
             </ul>
         </nav>
         <div class="sp-ham"><span></span><span></span><span></span></div>
@@ -29,7 +29,7 @@
             </h1>
         </div>
     </header>
-
+    
     <main>
         <section id="about">
             <h2 class="about-title">
@@ -41,12 +41,85 @@
             </h2>
             <div class="about-main slide">
                 <img src="./img/IMG_04150.JPG" alt="">
-                <div class="about-para slide">
+                <div class="about-para">
                     <p>当Webサイトポートフォリオをご覧いただき、ありがとうございます。</p>
                     <p>可愛いサイトや綺麗なサイトが好きですが、スタイリッシュなサイトなどもうんぬんかんぬん</p>
                     <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
                     <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
                     <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill">
+            <h2 class="skill-title">
+                <span>S</span>
+                <span>K</span>
+                <span>I</span>
+                <span>L</span>
+                <span>L</span>
+            </h2>
+            <div class="slide">
+                <div>
+                    <ul class="skill-list">
+                        <li>
+                            <img src="./img/html5-02.png" alt="">
+                            <h3>HTML5</h3>
+                        </li>
+                        <li>
+                            <img src="./img/css3-02.png" alt="">
+                            <h3>CSS3</h3>
+                        </li>
+                        <li>
+                            <img src="./img/prog-js02.png" alt="">
+                            <h3>JavaScript</h3>
+                        </li>
+                        <li>
+                            <img src="./img/prog-wordpress.png" alt="">
+                            <h3>WordPress</h3>
+                        </li>
+                        <li>
+                            <img src="./img/adb-illustrator.png" alt="">
+                            <h3>Illustrator</h3>
+                        </li>
+                        <li>
+                            <img src="./img/adb-xd.png" alt="">
+                            <h3>XD</h3>
+                        </li>
+
+                        <li>
+                            <img src="./img/os-win-04.png" alt="">
+                            <h3>Windows</h3>
+                        </li>
+                        <li>
+                            <img src="./img/android.png" alt="">
+                            <h3>android</h3>
+                        </li>
+                        <li>
+                            <img src="./img/os-ios.png" alt="">
+                            <h3>iOS</h3>
+                        </li>
+                        <li>
+                            <img src="./img/dropbox.png" alt="">
+                            <h3>dropbox</h3>
+                        </li>
+                        <li>
+                            <img src="./img/googledrive-02.png" alt="">
+                            <h3>GoogleDrive</h3>
+                        </li>
+                        <li>
+                            <img src="./img/github-01.png" alt="">
+                            <h3>Github</h3>
+                        </li>
+                        <li>
+                            <img src="./img/slack_.png" alt="">
+                            <h3>Slack</h3>
+                        </li>
+                        <li>
+                            <img src="./img/skype.png" alt="">
+                            <h3>Skype</h3>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -62,7 +135,7 @@
             <div class="slide">
                 <ul class="works-list">
                     <li class="works-item">
-                        <a href="../portfolio/マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
+                        <a href="../マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
                         <p>Macamacaron</p>
                         <p>メインページと商品一覧ページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
                     </li>
@@ -71,7 +144,7 @@
                         <p>作品名が入る</p>
                         <p>あとなんか</p>
                     </li>
-                    <li class="works-item">
+                    <!-- <li class="works-item">
                         <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
                         <p>作品名が入る</p>
                         <p>あとなんか</p>
@@ -85,22 +158,10 @@
                         <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
                         <p>作品名が入る</p>
                         <p>あとなんか</p>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
-        </section>
-        <section id="skill">
-            <h2 class="skill-title">
-                <span>S</span>
-                <span>K</span>
-                <span>I</span>
-                <span>L</span>
-                <span>L</span>
-            </h2>
-            <div class="slide">
-                text
-            </div>
         </section>
     </main>
 
@@ -132,15 +193,6 @@ $(function () {
                 $('.header-nav').removeClass('header-js');
             }
     });
-
-    function responsive() {
-    var w = $(window).width();
-    if ( w <= 460 ) {
-      $.fn.fullpage.setResponsive(true);
-    } else {
-      $.fn.fullpage.setResponsive(false);
-    }
-  }
 });
 
 
@@ -157,7 +209,7 @@ $(function() {
     $('nav a, .topbtn a').click(function(){
             var elmHash = $(this).attr('href');
             var headerH = $(nav).outerHeight(true);
-            var pos = $(elmHash).offset().top -headerH;
+            var pos = $(elmHash).offset().top - headerH;
             $('body,html').animate({scrollTop:pos},500);
             return false
         });
@@ -203,31 +255,40 @@ function PageTopAnime() {
 // セクションに偶数奇数ごとにトランスレート座標をつける
 
 $(function(){
-        $('section div:even').addClass('sectionEVEN');
-        $('section div:odd').addClass('sectionODD');
+        $('.slide:even').addClass('sectionEVEN');
+        $('.slide:odd').addClass('sectionODD');
 });
 
 
 // スクロールして読み込んだらメインテキスト部ブラー表示
-$(function() {
-  // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
-    // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".slide").each(function() {
-      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
-      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-      var windowHeihgt = $(window).height(); // ウィンドウの高さ
-      // ↓if式で計算する流れ----------
-      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
-      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-      if (scroll > blockPosition - windowHeihgt + 300) {
-        $(this).addClass("blockIn");
-      }
 
+
+
+$(function() {
+  if (window.matchMedia("(max-width: 960px)").matches) {
+        $(".slide,.sectionEVEN,.sectionODD").each(function() {
+            $(this).removeClass("slide");
+            $(this).removeClass("sectionEVEN");
+            $(this).removeClass("sectionODD");
+        });
+  } else {
+        $(window).scroll(function() {
+        // ↓複数のオブジェクトに対して繰り返し処理を行う
+        $(".slide").each(function() {
+        // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+        var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+        var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+        var windowHeihgt = $(window).height(); // ウィンドウの高さ
+        // ↓if式で計算する流れ----------
+        // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+        // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+        // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+        if (scroll > blockPosition - windowHeihgt + 300) {
+            $(this).addClass("blockIn");
+        }
+        });
     });
-  });
+  };
 });
 
 $(function() {
@@ -241,7 +302,7 @@ $(function() {
       var windowHeihgt = $(window).height(); // ウィンドウの高さ
       // ↓if式で計算する流れ----------
       // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+      // 手順② スクロール量が①より多くなった時＝要素 04567が画面上に表示されたと認識
       // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
       if (scroll > blockPosition - windowHeihgt + 100) {
         $(this).delay(i*150).queue(function(next){

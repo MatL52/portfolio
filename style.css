@@ -228,32 +228,81 @@ animation-delay: 0.15s;
 
 
 #about {
-    height: 100vh;
+    height: 90vh;
     background-color: #fdf0f0;
 }
 
 .about-main {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    /* margin-top: 8vh; */
-    padding: 15vh 0;
+    margin: 0 auto;
+    padding: 4vw 0;
+    width: 1080px;
+    max-width: 85%;
+    min-width: 900px;
 }
 
 .about-main img {
-    margin-right: 5vw;
+    /* margin: 0 50px 0 20px; */
     border-radius: 50%;
     box-shadow: 0 3px 15px 0 #550b0b;
+    width: 23vw;
+    max-width: 250px;
+    /* min-width: 900px; */
+
+
 }
 
-.about-main div {
-    
+.about-para p {
+    text-align: left;
+    width: 550px;
 }
+
+
+/* ////////////   SKILL SECTION   /////////////*/
+
+#skill {
+    height: 100vh;
+    background-color: #fffcfc;
+}
+
+.skill-list {
+    display: flex;
+    list-style: none;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    margin: 2vw auto;
+    max-width: 75%;
+    min-width: 725px;
+    width: 1080px;
+}
+
+.skill-list li {
+    /* display: flex; */
+    /* justify-content: center; */
+    width: calc(100%/5);
+    margin: 10px 0;
+    min-width: 145px;
+}
+
+.skill-list li h3 {
+    font-size: 1.5vw;
+}
+
+.skill-list li img {
+    width: 80px;
+    display: block;
+    /* margin: 10px auto 5px; */
+    margin: 0 auto;
+    filter: invert(0.3) sepia(1) hue-rotate(-45deg);
+}
+
 
 /* ////////////   WORKS SECTION   /////////////*/
 
 #works {
-    background-color: #fffcfc;
+    background-color: #fdf0f0;
     padding-bottom: 10vh;
 }
 
@@ -263,7 +312,9 @@ animation-delay: 0.15s;
     /* justify-content: ; */
     flex-wrap: wrap;
     margin: 3vh auto;
-    max-width: 95%;
+    width: 1080px;
+    /* min-width: 725px; */
+    max-width: 75%;
 }
 
 .works-list::after {
@@ -296,13 +347,6 @@ animation-delay: 0.15s;
 
 .works-item p:nth-of-type(2) {
     color: #927373;
-}
-
-/* ////////////   SKILL SECTION   /////////////*/
-
-#skill {
-    height: 100vh;
-    background-color: #fdf0f0;
 }
 
 /* ////////////   TOPボタン   /////////////*/
@@ -401,7 +445,16 @@ animation-delay: 0.15s;
         top: 25vh;
         left: 8vw;
         line-height: 12vh;
+        opacity: 1;
     }
+
+    #top h1 span {
+        color: #550b0b;
+        animation: none;
+        -webkit-animation: none;
+    }
+
+
 
     #about {
         height: auto;
@@ -411,7 +464,7 @@ animation-delay: 0.15s;
     .about-main {
         flex-flow: column;
         padding: 0;
-
+        min-width: 0;
     }
 
     .about-main img {
@@ -435,8 +488,29 @@ animation-delay: 0.15s;
         margin: 0 auto;
     }
 
+    #skill {
+        height: auto;
+    }
+
+    .skill-list {
+        min-width: 480px;
+    }
+
+    .skill-list li {
+        width: calc(100%/4);
+        min-width: 0;
+    }
+
+    .skill-list li h3 {
+        font-size: 1.3rem;
+    }
+
     #works {
-        height: 100vh;
+        /* height: 100vh; */
+    }
+
+    .works-list {
+        max-width: 95%;
     }
 
     .works-list::after{
@@ -444,12 +518,18 @@ animation-delay: 0.15s;
     }
     
     .works-item  {
-        max-width: 45%;
+        max-width: 75%;
+        min-width: 550px;
         margin: 20px auto;
     }
 
     .works-item p {
         text-align: center;
+        font-size: 1rem;
+    }
+
+    .works-item p:first-of-type{
+        font-size: 1.2rem;
     }
     
 }
@@ -583,7 +663,7 @@ animation-delay: 0.15s;
     .about-main {
         display: block;
         padding: 0;
-
+        max-width: 100%;
     }
 
     .about-main img {
@@ -593,13 +673,28 @@ animation-delay: 0.15s;
     }
 
     .about-main div {
-
         max-width: 90%;
     }
     
-    .about-main div p {
+    .about-para p {
+        width: auto;
         text-align: left;
         margin-bottom: 2vh;
+    }
+
+    .skill-list {
+        min-width: 360px;
+    }
+
+
+    .skill-list li {
+        width: calc(100%/3);
+        margin: 10px 0;
+        /* min-width: 140px; */
+    }
+
+    .skill-list li img {
+        width: 50px;
     }
 
     #works {
@@ -607,11 +702,12 @@ animation-delay: 0.15s;
     }
 
     .works-list {
-        max-width: 95%;
+        max-width: 90%;
     }
     
     .works-item  {
         max-width: 100%;
+        min-width: 0;
     }
 
     .works-item p {
@@ -622,4 +718,18 @@ animation-delay: 0.15s;
     .works-item p:first-of-type{
         font-size: 1.2rem;
     }
+}
+
+@media screen and (max-width:370px) {
+
+    .skill-list {
+        min-width: 0px;
+        max-width: 95%;
+    }
+
+    .skill-list li {
+        width: calc(100%/2);
+        min-width: 0;
+    }
+
 }
