@@ -181,61 +181,6 @@
     $(".circle-bg").removeClass('circleactive');
 });
 
-// picupスライドショー
-
-            // autoplay: true, // 自動再生
-            // autoplaySpeed: 4000,
-            // // fade: true, // スライドをフェードイン・フェードアウト
-            // cssEase: 'linear',// アニメーション
-            // speed: 600, // フェードアニメーションの速度設定
-            // arrows: true, // 矢印
-            // dots: true, // インジケーター
-            // slidesToShow: 1, // 表示させるスライド数
-            // centerPadding:"26%", //サイドのちょい見え加減
-            // centerMode: true, // slidesToShowが奇数のとき、現在のスライドを中央に表示する
-            // responsive: [
-            //                 {
-            //                 breakpoint: 769, // 768px以下のサイズに適用
-            //                 settings: {
-            //                 arrows: false,
-            //                 fade: true,
-            //                 centerMode: false,
-            //                 },
-            //                 },
-            //             ],
-            // });
-
-//上部画像の設定
-$('.picup-list').slick({
-  infinite: true, //スライドをループさせるかどうか。初期値はtrue。
-  fade: true, //フェードの有効化
-  arrows: false,//左右の矢印あり
-});
-
-//選択画像の設定
-$('.choice-btn').slick({
-  infinite: true, //スライドをループさせるかどうか。初期値はtrue。
-  slidesToShow: 12, //表示させるスライドの数
-  focusOnSelect: true, //フォーカスの有効化
-  asNavFor: '.picup-list', //連動させるスライドショーのクラス名
-//   variableWidth: true,
-//   responsive: [
-//                             {
-//                             breakpoint: 769, // 768px以下のサイズに適用
-//                             settings: {
-//                                 variableWidth: false
-//                             },
-//                             },
-//                         ],
-});
-  
-//下の選択画像をスライドさせずに連動して変更させる設定。
-$('.picup-list').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-  var index = nextSlide; //次のスライド番号
-  //サムネイルのslick-currentを削除し次のスライド要素にslick-currentを追加
-  $(".choice-btn .slick-slide").removeClass("slick-current").eq(index).addClass("slick-current");
-});
-
 // pc用ヘッダー色変化
 $(function () {
         $(window).on('scroll', function () {
@@ -247,15 +192,6 @@ $(function () {
                 $('.header-nav h3,a,a span').removeClass('navtext-js');
             }
     });
-
-    function responsive() {
-    var w = $(window).width();
-    if ( w <= 1023 ) {
-      $.fn.fullpage.setResponsive(true);
-    } else {
-      $.fn.fullpage.setResponsive(false);
-    }
-  }
 });
 
 // ナビゲーションリンクを押したら滑らかに移動する
@@ -269,38 +205,16 @@ $(function() {
 });
 
 $(function(){
-        $('.ad-main:even').addClass('adEVEN-js');
-        $('.ad-main:odd').addClass('adODD-js');
 
         // 下から上
-        $('.news,.picup').addClass('news-js');
+        $('.news').addClass('news-js');
 });
 
-// スクロールして読み込んだらメインテキスト部ブラー表示
-$(function() {
-  // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
-    // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".slide").each(function() {
-      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
-      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-      var windowHeihgt = $(window).height(); // ウィンドウの高さ
-      // ↓if式で計算する流れ----------
-      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
-      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-      if (scroll > blockPosition - windowHeihgt + 300) {
-        $(this).addClass("blockIn");
-      }
-
-    });
-  });
-});
 
 $(function() {
+    if (window.matchMedia("(min-width: 1023px)").matches) {
   // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
+        $(window).scroll(function() {
     // ↓複数のオブジェクトに対して繰り返し処理を行う
     $(".news-content").each(function(i) {
       // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
@@ -317,9 +231,19 @@ $(function() {
             next();
         });
       }
-
     });
-  });
+    });
+
+    } else {
+
+  $(".news-content").each(function() {
+            $(this).css({
+                'opacity':'1',
+                'transform':'translateY(0)'
+            });
+        });
+
+  };
 });
 
 </script>

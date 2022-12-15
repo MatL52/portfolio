@@ -307,15 +307,6 @@ $(function () {
                 $('.header-nav h3,a,a span').removeClass('navtext-js');
             }
     });
-
-    function responsive() {
-    var w = $(window).width();
-    if ( w <= 1023 ) {
-      $.fn.fullpage.setResponsive(true);
-    } else {
-      $.fn.fullpage.setResponsive(false);
-    }
-  }
 });
 
 // ナビゲーションリンクを押したら滑らかに移動する
@@ -325,7 +316,7 @@ $(function() {
             var pos = $(elmHash).offset().top+1;
             $('body,html').animate({scrollTop:pos},500);
             return false
-        });
+    });
 });
 
 
@@ -340,31 +331,42 @@ $(function(){
 
 // スクロールして読み込んだらメインテキスト部ブラー表示
 $(function() {
-  // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
-    // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".slide").each(function() {
-      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
-      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-      var windowHeihgt = $(window).height(); // ウィンドウの高さ
-      // ↓if式で計算する流れ----------
-      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
-      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-      if (scroll > blockPosition - windowHeihgt + 200) {
-        $(this).addClass("blockIn");
-      }
+  if (window.matchMedia("(min-width: 1023px)").matches) {
+
+    $(window).scroll(function() {
+        // ↓複数のオブジェクトに対して繰り返し処理を行う
+        $(".slide").each(function() {
+        // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
+        var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
+        var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
+        var windowHeihgt = $(window).height(); // ウィンドウの高さ
+        // ↓if式で計算する流れ----------
+        // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
+        // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
+        // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
+        if (scroll > blockPosition - windowHeihgt + 200) {
+            $(this).addClass("blockIn");
+        }
+        });
     });
-  });
+
+  } else {
+    $(".slide,.adEVEN-js,.adODD-js,.news-js").each(function() {
+            $(this).removeClass("slide");
+            $(this).removeClass("adEVEN-js");
+            $(this).removeClass("adODD-js");
+            $(this).removeClass("news-js");
+        });
+  };
 });
 
 
 
 
 $(function() {
+    if (window.matchMedia("(min-width: 1023px)").matches) {
   // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
+        $(window).scroll(function() {
     // ↓複数のオブジェクトに対して繰り返し処理を行う
     $(".news-content").each(function(i) {
       // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
@@ -381,9 +383,19 @@ $(function() {
             next();
         });
       }
-
     });
-  });
+    });
+
+    } else {
+
+  $(".news-content").each(function() {
+            $(this).css({
+                'opacity':'1',
+                'transform':'translateY(0)'
+            });
+        });
+
+  };
 });
 
 </script>
