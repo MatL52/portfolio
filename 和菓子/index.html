@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Noto+Serif+JP:wght@500&family=Shippori+Mincho&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
                     <li class="nav-item"><a href="#topics">TOPICS</a></li>
                     <li class="nav-item"><p><a href="#about">北関堂について</a></p></li>
                     <li class="nav-item"><p><a href="#access">店舗アクセス</a></p></li>
-                    <li class="nav-item"><p><a href="#">商品情報</a></p></li>
+                    <li class="nav-item"><p><a href="lineup.html">商品情報</a></p></li>
                     <li class="nav-item"><p><a href="#">採用情報</a></p></li>
                 </ul>
                 <div>
@@ -186,16 +186,26 @@ $(function () {
     });
 });
 
-//
+$(function () {
+    window.addEventListener('resize', () => {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
+});
+
+
+
+
+// スクロールしたら途中からトップボタンが現れる
 $(window).scroll(function(){
             PageTopAnime()//;
         });
 
 function PageTopAnime() {
             var scroll = $(window).scrollTop();
-            var aboutPosition = $('#topics').offset().top;
+            var topicsPosition = $('#topics').offset().top;
             var windowHeihgt = $(window).height(); // ウィンドウの高さ
-            if (scroll > aboutPosition - windowHeihgt +200 ) {//上から200pxスクロールしたら
+            if (scroll > topicsPosition - windowHeihgt +200 ) {//上から200pxスクロールしたら
                 $('.toppage').removeClass('DownMove');//.topbtnについているDownMoveというクラス名を除く
                 $('.toppage').addClass('UpMove');//.topbtnについているUpMoveというクラス名を付与
 
