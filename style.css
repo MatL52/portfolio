@@ -154,7 +154,7 @@ h2 span {
 
 #top {
     width: 100vw;
-    height: 100vh;
+    height: calc( var(--vh) * 100 );
     max-width: 100%;
     display: flex;
     align-items: center;
