@@ -51,11 +51,11 @@ p {
   @keyframes UpAnime{
     from {
       opacity: 0;
-    /* transform: translateY(100px); */
+    transform: translateY(100px);
     }
     to {
       opacity: 1;
-    /* transform: translateY(0); */
+    transform: translateY(0);
     }
   }
 
@@ -65,11 +65,11 @@ p {
 @keyframes DownAnime{
   from {
     opacity: 1;
-  /* transform: translateY(0); */
+  transform: translateY(0);
   }
   to {
     opacity: 0;
-  /* transform: translateY(100px); */
+  transform: translateY(100px);
   }
 }
 
@@ -277,6 +277,10 @@ p {
     color: #E8380D;
 }
 
+/* :root{
+    --myheight: 100px;
+  } */
+
 .top {
     position: relative;
     background-position: 20% 20%;
@@ -284,7 +288,10 @@ p {
     background-image: url(./image/hero-sp.png);
     background-size: cover;
     background-position: 80% 50%;
-    height: 100vh;
+    /* height: 100vh; */
+    /* height: calc(var(--vh, 1vh) * 100); */
+    /* height: var(--myheight); */
+    height: calc( var(--vh) * 100 );
     width: 100%;
 }
 
@@ -346,8 +353,12 @@ p {
     font-size: 1.2rem;
     color: #707070;
     margin-bottom: 50px;
+    transition: all 0.5s;
 }
 
+.topics a:hover {
+    color: #B66161;
+}
 
 
 
@@ -979,30 +990,22 @@ small {
         height: 6vw;
         bottom: 15px;
         right: 5%;
-        animation: remove 1.5s  forwards;
+        animation: remove 1s ease-out  forwards;
     }
 
     .toppage:hover {
-        animation: move 1.5s ease-in-out  infinite;
+        animation: move 0.4s ease-in-out  forwards;
 
     }
 
     @keyframes move {
-        0% {transform:translateY(0px);}
-        50% {transform:translateY(-10px);}
-        100% {transform:translateY(0px);}
+        100% {transform:translateY(-15px);}
     }
 
     @keyframes remove {
-        0% {transform:translateY(-10px);}
+        0% {transform:translateY(-15px);}
         100% {transform:translateY(0px);}
     }
-
-    /* @keyframes move {
-        0% {margin-bottom: 0;}
-        50% {margin-bottom: 20px;}
-        100% {margin-bottom: 0;}
-    } */
 
     #nav {
         position: fixed;
@@ -1048,14 +1051,12 @@ small {
         backdrop-filter: blur(5px);
         box-shadow: #53404080 0 2px 5px;
     }
-
-
     
-    /* .header-nav h3.navtext-js,
+    .header-nav h3.navtext-js,
     .nav-item a.navtext-js,
     .nav-item a span.navtext-js{
         color: #776363;
-    } */
+    }
 
     .nav-list {
         display: flex;
@@ -1152,7 +1153,7 @@ small {
 
     .ab-t {
         display: flex;
-        margin-bottom: 20vw;
+        margin-bottom: 0px;
     }
 
     .ab-t div:last-of-type,

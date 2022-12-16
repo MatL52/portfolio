@@ -186,12 +186,13 @@ $(function () {
     });
 });
 
-var vh=window.innerHeight;
-document.getElementsByClassName('top').style.height=vh+'px';
+// var vh=window.innerHeight;
+// document.getElementsByClassName('top').style.height=vh+'px';
 
-$('.top').css('height',$(window).height());
+// $('.top').css('height',$(window).height());
 
-
+var height=window.innerHeight;
+document.documentElement.style.setProperty( '--vh', height/100 + 'px');
 
 
 // スクロールしたら途中からトップボタンが現れる
