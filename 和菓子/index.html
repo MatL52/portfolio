@@ -186,12 +186,10 @@ $(function () {
     });
 });
 
-$(function () {
-    window.addEventListener('resize', () => {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-});
-});
+var vh=window.innerHeight;
+document.getElementsByClassName('top').style.height=vh+'px';
+
+$('.top').css('height',$(window).height());
 
 
 
