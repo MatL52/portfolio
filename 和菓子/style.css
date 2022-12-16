@@ -277,10 +277,6 @@ p {
     color: #E8380D;
 }
 
-/* :root{
-    --myheight: 100px;
-  } */
-
 .top {
     position: relative;
     background-position: 20% 20%;
@@ -288,16 +284,13 @@ p {
     background-image: url(./image/hero-sp.png);
     background-size: cover;
     background-position: 80% 50%;
-    /* height: 100vh; */
-    /* height: calc(var(--vh, 1vh) * 100); */
-    /* height: var(--myheight); */
     height: calc( var(--vh) * 100 );
     width: 100%;
 }
 
 .top-para {
     position: absolute;
-    top: 26%;
+    top: 20%;
     left: 23%;
     writing-mode: vertical-rl;
 }
