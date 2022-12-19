@@ -39,7 +39,6 @@ html {
 body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
-    overflow-y: hidden;
 }
 
 
@@ -299,11 +298,7 @@ body {
     background-image: url(./image/hero-sp.png);
     background-size: cover;
     background-position: 80% 50%;
-    /* height: 100vh; */
-    /* height: calc(var(--vh, 1vh) * 100); */
-    /* height: var(--myheight); */
-    height: calc( var(--vh) * 100 );
-    /* height: 100vh; */
+    height: 100vh;
     width: 100%;
 }
 
