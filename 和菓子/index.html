@@ -235,16 +235,17 @@ $(function() {
   };
 });
 
+let ph = document.getElementById('hsize');
+
+let Topbutton = document.getElementsByClassName('toppage');
+    Topbutton.addEventListener('click', resizeWindow);
 function resizeWindow(event){
     ph.innerText = 'height:' + window.innerHeight + 'px';
 }
 
-let ph = document.getElementById('hsize');
 
 
-$(function(){
-    $('.toppage').addEventListener('click', resizeWindow);
-});
+
 
 
 // $('.top').css('height',$(window).height());
