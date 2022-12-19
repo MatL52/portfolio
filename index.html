@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
     <link rel="shortcut icon" href="./img/favicon2.ico" type="image/vnd.microsoft.icon">
     <title>Mami's Portfolio</title>
@@ -135,7 +135,7 @@
             <div class="slide">
                 <ul class="works-list">
                     <li class="works-item">
-                        <a href="マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
+                        <a href="../マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
                         <p>Macamacaron</p>
                         <p>メインページと商品一覧ページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
                     </li>
@@ -250,13 +250,6 @@ function PageTopAnime() {
                 }
             }
         }
-
-
-
-window.addEventListener('resize', () => {
-var height=window.innerHeight;
-document.documentElement.style.setProperty( '--vh', height/100 + 'px');
-});
 
 
 // セクションに偶数奇数ごとにトランスレート座標をつける
