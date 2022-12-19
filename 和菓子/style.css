@@ -31,6 +31,15 @@ p {
     color: #707070;
 }
 
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
 
 .toppage {
     position: fixed;
@@ -277,23 +286,28 @@ p {
     color: #E8380D;
 }
 
+/* :root{
+    --myheight: 100px;
+  } */
+
 .top {
-    overflow: hidden;
     position: relative;
     background-position: 20% 20%;
     top: 0;
     background-image: url(./image/hero-sp.png);
     background-size: cover;
     background-position: 80% 50%;
+    /* height: 100vh; */
+    /* height: calc(var(--vh, 1vh) * 100); */
+    /* height: var(--myheight); */
     /* height: calc( var(--vh) * 100 ); */
     height: 100dvh;
-    height: -webkit-fill-available;
     width: 100%;
 }
 
 .top-para {
     position: absolute;
-    top: 20%;
+    top: 26%;
     left: 23%;
     writing-mode: vertical-rl;
 }
