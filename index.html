@@ -4,217 +4,197 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Noto+Serif+JP:wght@500&family=Shippori+Mincho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
-    <link rel="shortcut icon" href="./img/favicon2.ico" type="image/vnd.microsoft.icon">
-    <title>Mami's Portfolio</title>
+    <link rel="shortcut icon" href="./使用画像/favicon.ico" type="image/vnd.microsoft.icon">
+    <title>北関堂</title>
 </head>
 <body>
+    <a class="toppage" href="#top"></a>
     <header>
         <nav class="header-nav" ID="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#skill">Skill</a></li>
-                <li class="nav-item"><a href="#works">Works</a></li>
-            </ul>
+            <div class="flex">
+                <h1>北<span>関</span>堂</h1>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#top">TOP</a></li>
+                    <li class="nav-item"><a href="#topics">TOPICS</a></li>
+                    <li class="nav-item"><p><a href="#about">北関堂について</a></p></li>
+                    <li class="nav-item"><p><a href="#access">店舗アクセス</a></p></li>
+                    <li class="nav-item"><p><a href="lineup.html">商品情報</a></p></li>
+                    <li class="nav-item"><p><a href="#">採用情報</a></p></li>
+                </ul>
+                <div>
+                    <p>公式Twitter</p>
+                    <a href="#acount"><img src="./img/twitter-img.png" alt=""></a>
+                </div>
+            </div>
         </nav>
         <div class="sp-ham"><span></span><span></span><span></span></div>
-        <div ID="top">
-            <div></div>
-            <h1>
-                <span>welcome to</span><br>
-                <span>mami nishimura's</span><br>
-                <span>Portfolio</span>
-            </h1>
+        <div class="circle-bg"></div>
+        <div class="sp-topbar"><h1>北<span>関</span>堂</h1></div>
+        <div class="top" id="top">
+            <div class="top-para">
+                <h2>大切なひとときに<br>季節に合わせた和菓子を</h2>
+            </div>
         </div>
     </header>
-    
+
     <main>
-        <section id="about">
-            <h2 class="about-title">
-                <span>A</span>
-                <span>B</span>
-                <span>O</span>
-                <span>U</span>
-                <span>T</span>
-            </h2>
-            <div class="about-main slide">
-                <img src="./img/IMG_04150.JPG" alt="">
-                <div class="about-para">
-                    <p>当Webサイトポートフォリオをご覧いただき、ありがとうございます。</p>
-                    <p>可愛いサイトや綺麗なサイトが好きですが、スタイリッシュなサイトなどもうんぬんかんぬん</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+        <section class="topics" id="topics">
+            <h3>TOPICS</h3>
+            <ul class="topics-list">
+                <li>
+                    <p>2011.11.1</p>
+                    <p>期間限定 丸ごと栗どら焼き発売</p>
+                </li>
+                <li>
+                    <p>2011.10.10</p>
+                    <p>大九藤井店にて出張販売</p>
+                </li>
+            </ul>
+            <div>
+                <a href="">→ more</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <h1>北関堂について</h1>
+            <div class="wrapper">
+                <div class="ab-t">
+                    <div>
+                        <p>平成９年創業の当店では 
+                            四季折々の和菓⼦をご⽤意して
+                            おります。</p>
+                        <p>「今度の集まりでは何をご⽤意
+                            したら…」 <br>
+                            「季節の雰囲気に合わせた和菓
+                            ⼦がほしい」 </p>
+                        <p>これまで培ってきたノウハウで、
+                            全てのお客様にご満⾜いただけ
+                            るお品を提供致します。</p>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+
+                <div class="ab-sp">
+                    <div>
+                        <p>桃の節句や端午の節句<br>新生活のお祝いに</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="ab-su">
+                    <div>
+                        <p>お中元に<br>涼をよぶ夏のギフト</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="ab-au">
+                    <div>
+                        <p>栗どら焼きに芋ようかん<br>秋は和菓子がおいしい季節</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="ab-wi">
+                    <div>
+                        <p>一年の感謝の贈り物に<br>お年始回りのお土産に</p>
+                    </div>
+                    <div></div>
                 </div>
             </div>
         </section>
 
-        <section id="skill">
-            <h2 class="skill-title">
-                <span>S</span>
-                <span>K</span>
-                <span>I</span>
-                <span>L</span>
-                <span>L</span>
-            </h2>
-            <div class="slide">
+        <section class="access" id="access">
+            <h1>店舗アクセス</h1>
+            <div class="ac-wrapper">
                 <div>
-                    <ul class="skill-list">
+                    <ul>
                         <li>
-                            <img src="./img/html5-02.png" alt="">
-                            <h3>HTML5</h3>
+                            <p>営業時間</p>
+                            <p>10：00　～　18：00</p>
                         </li>
                         <li>
-                            <img src="./img/css3-02.png" alt="">
-                            <h3>CSS3</h3>
+                            <p>定休日</p>
+                            <p>木曜日</p>
                         </li>
                         <li>
-                            <img src="./img/prog-js02.png" alt="">
-                            <h3>JavaScript</h3>
+                            <p>住所</p>
+                            <p>札幌市中央区南9条西3丁目2-10<br>札幌KSビル　6F</p>
                         </li>
                         <li>
-                            <img src="./img/prog-wordpress.png" alt="">
-                            <h3>WordPress</h3>
+                            <p>電話番号</p>
+                            <p>011-232-5508</p>
                         </li>
                         <li>
-                            <img src="./img/adb-illustrator.png" alt="">
-                            <h3>Illustrator</h3>
-                        </li>
-                        <li>
-                            <img src="./img/adb-xd.png" alt="">
-                            <h3>XD</h3>
-                        </li>
-
-                        <li>
-                            <img src="./img/os-win-04.png" alt="">
-                            <h3>Windows</h3>
-                        </li>
-                        <li>
-                            <img src="./img/android.png" alt="">
-                            <h3>android</h3>
-                        </li>
-                        <li>
-                            <img src="./img/os-ios.png" alt="">
-                            <h3>iOS</h3>
-                        </li>
-                        <li>
-                            <img src="./img/dropbox.png" alt="">
-                            <h3>dropbox</h3>
-                        </li>
-                        <li>
-                            <img src="./img/googledrive-02.png" alt="">
-                            <h3>GoogleDrive</h3>
-                        </li>
-                        <li>
-                            <img src="./img/github-01.png" alt="">
-                            <h3>Github</h3>
-                        </li>
-                        <li>
-                            <img src="./img/slack_.png" alt="">
-                            <h3>Slack</h3>
-                        </li>
-                        <li>
-                            <img src="./img/skype.png" alt="">
-                            <h3>Skype</h3>
+                            <p>アクセス</p>
+                            <p>地下鉄　南北線<br>中島公園駅より　徒歩1分</p>
                         </li>
                     </ul>
                 </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182.2272846558459!2d141.3552914187312!3d43.049077914728585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b2a27ee23d679%3A0xd35df191aba68757!2z44CSMDY0LTA4MDkg5YyX5rW36YGT5pyt5bmM5biC5Lit5aSu5Yy65Y2X77yZ5p2h6KW_77yT5LiB55uu77yS4oiS77yR77yQIOacreW5jO-8q--8ju-8s-ODk-ODqw!5e0!3m2!1sja!2sjp!4v1670258987872!5m2!1sja!2sjp" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
-        </section>
-
-        <section id="works">
-            <h2 class="works-title">
-                <span>W</span>
-                <span>O</span>
-                <span>R</span>
-                <span>K</span>
-                <span>S</span>
-            </h2>
-            <div class="slide">
-                <ul class="works-list">
-                    <li class="works-item">
-                        <a href="マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
-                        <p>Macamacaron</p>
-                        <p>メインページと商品一覧ページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
-                    </li>
-                    <li class="works-item">
-                        <a href="和菓子/index.html"><img src="./img/kitakando.png" alt=""></a>
-                        <p>北関堂</p>
-                        <p>メインページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
-                    </li>
-                    <!-- <li class="works-item">
-                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
-                        <p>作品名が入る</p>
-                        <p>あとなんか</p>
-                    </li>
-                    <li class="works-item">
-                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
-                        <p>作品名が入る</p>
-                        <p>あとなんか</p>
-                    </li>
-                    <li class="works-item">
-                        <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
-                        <p>作品名が入る</p>
-                        <p>あとなんか</p>
-                    </li> -->
-                </ul>
-            </div>
-
         </section>
     </main>
 
     <footer>
-        <div class="topbtn">
-            <a href="#top">^</a>
-        </div>
-
-        <div class="bar"></div>
-        <div class="copy">
-            <small>©Mami Nishimura</small>
-        </div>
+        <section id="footer">
+            <p>公式Twitter</p>
+            <p>新着情報はこちら</p>
+            <a href="https://twitter.com"><img src="./img/twitter-img.png" alt=""></a>
+            <p><small>©2022 kitakando All Rights Reserved.</small></p>
+        </section>
     </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <!--Google提供のjQueryはこんな書き方-->
+<!--Google提供のjQueryはこんな書き方-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--Microsoft提供のjQueryはこんな書き方-->
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script>
 
-<script>
-// 少しスクロールするとheaderナビゲーションの色とサイズが変わる
 
+<script>
+// ハンバーガーメニュー
+    $(".sp-ham").click(function () {//ボタンがクリックされたら
+    $(this).toggleClass('opn-ham');//ボタン自身に activeクラスを付与し
+    $("#nav").toggleClass('navactive');//ナビゲーションにpanelactiveクラスを付与
+    $(".circle-bg").toggleClass('circleactive');
+});
+
+    $(".nav-item a").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".sp-ham").removeClass('opn-ham');//ボタンの activeクラスを除去し
+    $("#nav").removeClass('navactive');//ナビゲーションのpanelactiveクラスも除去
+    $(".circle-bg").removeClass('circleactive');
+});
+
+
+
+// pc用ヘッダー色変化
 $(function () {
         $(window).on('scroll', function () {
             if ($('.header-nav').height()  < $(this).scrollTop()) {
                 $('.header-nav').addClass('header-js');
+                $('.header-nav h3,a,a span').addClass('navtext-js');
             } else {
                 $('.header-nav').removeClass('header-js');
+                $('.header-nav h3,a,a span').removeClass('navtext-js');
             }
     });
 });
 
+// var vh=window.innerHeight;
+// document.getElementsByClassName('top').style.height=vh+'px';
 
-// ナビゲーションリンクを押したら滑らかに移動する
-$(function() {
-  if (window.matchMedia("(max-width: 460px)").matches) {
-    $('nav a, .topbtn a').click(function(){
-            var elmHash = $(this).attr('href');
-            var pos = $(elmHash).offset().top;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-  } else {
-    $('nav a, .topbtn a').click(function(){
-            var elmHash = $(this).attr('href');
-            var headerH = $(nav).outerHeight(true);
-            var pos = $(elmHash).offset().top - headerH;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-  };
-});
+// $('.top').css('height',$(window).height());
+// window.addEventListener('resize', () => {
+// var height=window.innerHeight;
+// document.documentElement.style.setProperty( '--vh', height/100 + 'px');
+// });
+
 
 // スクロールしたら途中からトップボタンが現れる
 $(window).scroll(function(){
@@ -223,103 +203,81 @@ $(window).scroll(function(){
 
 function PageTopAnime() {
             var scroll = $(window).scrollTop();
-            var aboutPosition = $('#about').offset().top;
+            var topicsPosition = $('#topics').offset().top;
             var windowHeihgt = $(window).height(); // ウィンドウの高さ
-            if (scroll > aboutPosition - windowHeihgt +200 ) {//上から200pxスクロールしたら
-                $('.topbtn').removeClass('DownMove');//.topbtnについているDownMoveというクラス名を除く
-                $('.topbtn').addClass('UpMove');//.topbtnについているUpMoveというクラス名を付与
+            if (scroll > topicsPosition - windowHeihgt +200 ) {//上から200pxスクロールしたら
+                $('.toppage').removeClass('DownMove');//.topbtnについているDownMoveというクラス名を除く
+                $('.toppage').addClass('UpMove');//.topbtnについているUpMoveというクラス名を付与
 
 
             } else {
-                if ($('.topbtn').hasClass('UpMove')) {//すでに.topbtnにUpMoveというクラス名がついていたら
-                    $('.topbtn').removeClass('UpMove');//UpMoveというクラス名を除き
-                    $('.topbtn').addClass('DownMove');//DownMoveというクラス名を.topbtnに付与
+                if ($('.toppage').hasClass('UpMove')) {//すでに.topbtnにUpMoveというクラス名がついていたら
+                    $('.toppage').removeClass('UpMove');//UpMoveというクラス名を除き
+                    $('.toppage').addClass('DownMove');//DownMoveというクラス名を.topbtnに付与
                 }
             }
+}
 
-// フッター上までの表示
-            var wH = window.innerHeight;
-            var footerPos = $('footer').offset().top;
-            if(scroll+wH >= (footerPos+10)){
-                var pos = (scroll + wH ) - footerPos + 10
-                $('.topbtn').css('bottom', pos);
-            }
-            else{
-                if($('.topbtn').hasClass('UpMove')){
-                    $('.topbtn').css('bottom','10px');
-                }
-            }
-        }
-
-
-// セクションに偶数奇数ごとにトランスレート座標をつける
-
-$(function(){
-        $('.slide:even').addClass('sectionEVEN');
-        $('.slide:odd').addClass('sectionODD');
-});
-
-
-// スクロールして読み込んだらメインテキスト部ブラー表示
-
-
-
+// ナビゲーションリンクを押したら滑らかに移動する
 $(function() {
-  if (window.matchMedia("(max-width: 960px)").matches) {
-        $(".slide,.sectionEVEN,.sectionODD").each(function() {
-            $(this).removeClass("slide");
-            $(this).removeClass("sectionEVEN");
-            $(this).removeClass("sectionODD");
+  if (window.matchMedia("(max-width: 1023px)").matches) {
+    $('.nav-item a, .toppage').click(function(){
+            var elmHash = $(this).attr('href');
+            var headerH = $('.sp-topbar').outerHeight(true);
+            var pos = $(elmHash).offset().top - headerH;
+            $('body,html').animate({scrollTop:pos},500);
+            return false
         });
   } else {
-        $(window).scroll(function() {
-        // ↓複数のオブジェクトに対して繰り返し処理を行う
-        $(".slide").each(function() {
-        // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
-        var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-        var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-        var windowHeihgt = $(window).height(); // ウィンドウの高さ
-        // ↓if式で計算する流れ----------
-        // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-        // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
-        // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-        if (scroll > blockPosition - windowHeihgt + 300) {
-            $(this).addClass("blockIn");
-        }
+    $('nav a, .toppage').click(function(){
+            var elmHash = $(this).attr('href');
+            var headerPCH = $(nav).outerHeight(true);
+            var pos = $(elmHash).offset().top - headerPCH;
+            $('body,html').animate({scrollTop:pos},500);
+            return false
         });
-    });
   };
 });
 
+
+
+$(function(){
+        $('.ad-main:even div').addClass('adEVEN-js');
+        $('.ad-main:odd div').addClass('adODD-js');
+
+        // 下から上
+        $('.news .slide,.picup .slide').addClass('news-js');
+});
+
+// スクロールして読み込んだらメインテキスト部ブラー表示
 $(function() {
   // ↓windowがスクロールされた時に実行する処理
   $(window).scroll(function() {
     // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".about-title span").each(function(i) {
+    $(".slide").each(function() {
       // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
       var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
       var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
       var windowHeihgt = $(window).height(); // ウィンドウの高さ
       // ↓if式で計算する流れ----------
       // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素 04567が画面上に表示されたと認識
+      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
       // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-      if (scroll > blockPosition - windowHeihgt + 100) {
-        $(this).delay(i*150).queue(function(next){
-            $(this).addClass("active");
-            next();
-        });
+      if (scroll > blockPosition - windowHeihgt + 200) {
+        $(this).addClass("blockIn");
       }
-
     });
   });
 });
+
+
+
 
 $(function() {
   // ↓windowがスクロールされた時に実行する処理
   $(window).scroll(function() {
     // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".works-title span").each(function(i) {
+    $(".news-content").each(function(i) {
       // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
       var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
       var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
@@ -329,7 +287,7 @@ $(function() {
       // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
       // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
       if (scroll > blockPosition - windowHeihgt + 100) {
-        $(this).delay(i*150).queue(function(next){
+        $(this).delay(i*100).queue(function(next){
             $(this).addClass("active");
             next();
         });
@@ -338,46 +296,7 @@ $(function() {
     });
   });
 });
-
-$(function() {
-  // ↓windowがスクロールされた時に実行する処理
-  $(window).scroll(function() {
-    // ↓複数のオブジェクトに対して繰り返し処理を行う
-    $(".skill-title span").each(function(i) {
-      // ↓要素が画面上に表示されたかどうかを判定させる変数を定義----------
-      var scroll = $(window).scrollTop(); // 画面トップからのスクロール量
-      var blockPosition = $(this).offset().top; // 画面トップから見たブロックのある位置
-      var windowHeihgt = $(window).height(); // ウィンドウの高さ
-      // ↓if式で計算する流れ----------
-      // 手順① 表示させたいブロックの位置している高さ - ウィンドウの高さ
-      // 手順② スクロール量が①より多くなった時＝要素が画面上に表示されたと認識
-      // 手順③ 要素に「blockIn」クラスを付与。動きはCSSで制御。
-      if (scroll > blockPosition - windowHeihgt + 100) {
-        $(this).delay(i*150).queue(function(next){
-            $(this).addClass("active");
-            next();
-        });
-      }
-
-    });
-  });
-});
-
-// レスポンシブ sp用
-// ハンバーガーMenu
-$(".sp-ham").click(function () {//ボタンがクリックされたら
-    $(this).toggleClass('opn-ham');//ボタン自身に activeクラスを付与し
-    $("#nav").toggleClass('navactive');//ナビゲーションにpanelactiveクラスを付与
-});
-
-$(".nav-item a").click(function () {//ナビゲーションのリンクがクリックされたら
-    $(".sp-ham").removeClass('opn-ham');//ボタンの activeクラスを除去し
-    $("#nav").removeClass('navactive');//ナビゲーションのpanelactiveクラスも除去
-});
-
-
 
 </script>
-
 </body>
 </html>
