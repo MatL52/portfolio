@@ -13,7 +13,7 @@
     <title>北関堂</title>
 </head>
 <body>
-    <a class="toppage" href="#top"></a>
+    <a class="toppage" href="#top" type="button"></a>
     <header>
         <nav class="header-nav" ID="nav">
             <div class="flex">
@@ -186,11 +186,6 @@ $(function () {
     });
 });
 
-// var vh=window.innerHeight;
-// document.getElementsByClassName('top').style.height=vh+'px';
-
-
-
 
 // スクロールしたら途中からトップボタンが現れる
 $(window).scroll(function(){
@@ -235,24 +230,6 @@ $(function() {
   };
 });
 
-let ph = document.getElementById('hsize');
-
-let Topbutton = document.getElementsByClassName('toppage');
-    Topbutton.addEventListener('click', resizeWindow);
-function resizeWindow(event){
-    ph.innerText = 'height:' + window.innerHeight + 'px';
-}
-
-
-
-
-
-
-// $('.top').css('height',$(window).height());
-// window.addEventListener('resize', () => {
-// var height=window.innerHeight;
-// document.documentElement.style.setProperty( '--vh', height/100 + 'px');
-// });
 
 $(function(){
         $('.ad-main:even div').addClass('adEVEN-js');
