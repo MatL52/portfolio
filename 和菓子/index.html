@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Noto+Serif+JP:wght@500&family=Shippori+Mincho&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./使用画像/favicon.ico" type="image/vnd.microsoft.icon">
     <title>北関堂</title>
 </head>
 <body>
-    
+    <a class="toppage" href="#top"></a>
     <header>
         <nav class="header-nav" ID="nav">
             <div class="flex">
@@ -41,7 +41,7 @@
             </div>
         </div>
     </header>
-    <a class="toppage" href="#top"></a>
+
     <main>
         <section class="topics" id="topics">
             <h3>TOPICS</h3>
@@ -189,11 +189,11 @@ $(function () {
 // var vh=window.innerHeight;
 // document.getElementsByClassName('top').style.height=vh+'px';
 
-$('.top').css('height',$(window).height());
-window.addEventListener('resize', () => {
-var height=window.innerHeight;
-document.documentElement.style.setProperty( '--vh', height/100 + 'px');
-});
+// $('.top').css('height',$(window).height());
+// window.addEventListener('resize', () => {
+// var height=window.innerHeight;
+// document.documentElement.style.setProperty( '--vh', height/100 + 'px');
+// });
 
 
 // スクロールしたら途中からトップボタンが現れる
