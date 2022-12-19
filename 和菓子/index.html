@@ -235,20 +235,23 @@ $(function() {
   };
 });
 
+function resizeWindow(event){
+    ph.innerText = 'height:' + window.innerHeight + 'px';
+}
+
+let ph = document.getElementById('hsize');
+
+
 $(function(){
-    $('.toppage').click$('.top').css('height',$(window).height());
+    $('.toppage').click.window.addEventListener('resize', resizeWindow);
+});
+
+
+$('.top').css('height',$(window).height());
 window.addEventListener('resize', () => {
 var height=window.innerHeight;
 document.documentElement.style.setProperty( '--vh', height/100 + 'px');
 });
-});
-
-
-// $('.top').css('height',$(window).height());
-// window.addEventListener('resize', () => {
-// var height=window.innerHeight;
-// document.documentElement.style.setProperty( '--vh', height/100 + 'px');
-// });
 
 $(function(){
         $('.ad-main:even div').addClass('adEVEN-js');
