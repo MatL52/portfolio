@@ -53,6 +53,7 @@ body {
     left: auto;
     background-image: url(./image/top.png);
     background-size: cover;
+    font-size: 0;
 }
 
 .UpMove{
