@@ -1098,7 +1098,7 @@ small {
     }
 
     .top {
-        height: 80vh;
+        min-height: 80vh;
         max-width: 70%;
         margin: 10vh auto 0;
         background-size: cover;
