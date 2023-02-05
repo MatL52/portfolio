@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Noto+Serif+JP:wght@500&family=Shippori+Mincho&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="shortcut icon" href="./使用画像/favicon.ico" type="image/vnd.microsoft.icon"> -->
+    <link rel="shortcut icon" href="./使用画像/favicon.ico" type="image/vnd.microsoft.icon">
     <title>北関堂</title>
 </head>
 <body>
@@ -34,8 +34,8 @@
         </nav>
         <div class="sp-ham"><span></span><span></span><span></span></div>
         <div class="circle-bg"></div>
-        <div class="sp-topbar"><h1>北<span>関</span>堂</h1></div>
-        <div class="top" id="top">
+        <div class="sp-topbar" id="top"><h1>北<span>関</span>堂</h1></div>
+        <div class="top">
             <div class="top-para">
                 <h2>大切なひとときに<br>季節に合わせた和菓子を</h2>
             </div>
@@ -190,17 +190,10 @@ $(function () {
 // document.getElementsByClassName('top').style.height=vh+'px';
 
 // $('.top').css('height',$(window).height());
-// window.addEventListener('resize', () => {
-// var height=window.innerHeight;
-// document.documentElement.style.setProperty( '--vh', height/100 + 'px');
-// });
-
-const setFillHeight = () => {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-window.addEventListener('resize', setFillHeight);
+window.addEventListener('resize', () => {
+var height=window.innerHeight;
+document.documentElement.style.setProperty( '--vh', height/100 + 'px');
+});
 
 
 // スクロールしたら途中からトップボタンが現れる
@@ -228,7 +221,7 @@ function PageTopAnime() {
 // ナビゲーションリンクを押したら滑らかに移動する
 $(function() {
   if (window.matchMedia("(max-width: 1023px)").matches) {
-    $('.nav-item a').click(function(){
+    $('.nav-item a, .toppage').click(function(){
             var elmHash = $(this).attr('href');
             var headerH = $('.sp-topbar').outerHeight(true);
             var pos = $(elmHash).offset().top - headerH;
@@ -236,27 +229,7 @@ $(function() {
             return false
         });
   } else {
-    $('nav a').click(function(){
-            var elmHash = $(this).attr('href');
-            var headerPCH = $(nav).outerHeight(true);
-            var pos = $(elmHash).offset().top - headerPCH;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-  };
-});
-
-$(function() {
-  if (window.matchMedia("(max-width: 1023px)").matches) {
-    $('.toppage').click(function(){
-            var elmHash = $(this).attr('href');
-            var headerH = $('.sp-topbar').outerHeight(true);
-            var pos = $(elmHash).offset().top;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-  } else {
-    $('.toppage').click(function(){
+    $('nav a, .toppage').click(function(){
             var elmHash = $(this).attr('href');
             var headerPCH = $(nav).outerHeight(true);
             var pos = $(elmHash).offset().top - headerPCH;

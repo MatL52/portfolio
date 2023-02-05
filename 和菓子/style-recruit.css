@@ -13,22 +13,31 @@ main {
 }
 
 h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #707070;
     letter-spacing: 0.1rem;
     font-weight: 500;
     text-indent: 1rem;
     line-height: 65px;
+    margin: 0;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #857979;
 }
 
 
 p {
     color: #707070;
+}
+
+body {
+    background-image: url(./img/back.jpeg);
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    position: relative;
+    z-index: -2;
 }
 
 
@@ -43,6 +52,7 @@ p {
     left: auto;
     background-image: url(./image/top.png);
     background-size: cover;
+    font-size: 0;
 }
 
 .UpMove{
@@ -277,367 +287,100 @@ p {
     color: #E8380D;
 }
 
+/* :root{
+    --myheight: 100px;
+  } */
+
 .top {
-    overflow: hidden;
     position: relative;
-    background-position: 20% 20%;
-    top: 0;
-    background-image: url(./image/hero-sp.png);
+    z-index: -1;
+    top: 65px;
+    bottom: auto;
+    background-position: center;
+    background-image: url(./img/recruit.jpeg);
     background-size: cover;
-    background-position: 80% 50%;
-    /* height: calc( var(--vh) * 100 ); */
-    height: 100dvh;
-    width: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 300px;
+    width: 100vw;
+    opacity: 0.6;
+    /* aspect-ratio: 4/3;        */
 }
 
 .top-para {
-    position: absolute;
-    top: 20%;
-    left: 23%;
-    writing-mode: vertical-rl;
+    position: fixed;
+    top: 65px;
+    left: 50%;
+    width: 100vw;
+    height: 300px;
+    z-index: -1;
+    transform: translateX(-50%);
+
+    /* writing-mode: vertical-rl; */
 }
 
 .top-para h2 {
-    color: #B66161;
-    background: rgba(255, 255, 255, 0.721);
-    font-size: 1.5rem;
-    line-height: 2rem;
-    letter-spacing: 2vh;
-    padding: 3vh;
+    color: #000000;
+    /* background: rgba(255, 255, 255, 0.321); */
+    font-size: 2rem;
+    line-height: 400px;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    padding: 0;
+    border-radius: 50%;
+    text-shadow: 1px 1px 0px #ffffff;
+    text-align: center;
 }
-
+.job {
+    position: relative;
+    z-index: 3;
+    background-image: url(./img/back.jpeg);
+    background-color:rgba(255,255,255,0.65);
+    background-blend-mode:lighten;
+    padding-top: 20px;
+}
 
 /* topics */
 
-#topics {
-    padding-top: 5px;
-}
-
-.topics h3 {
+.title h3 {
     font-size: 1.5rem;
     text-align: center;
     margin: 30px 0;
     color: #707070;
 }
 
-.topics-list {
-    list-style: none;
-    margin-bottom: 50px;
-    /* max-width: 90%; */
-    /* padding: 0; */
-} 
-
-.topics-list li {
-    max-width: 90%;
-}
-
-.topics-list p {
-    font-size: 1.2rem;
-    color: #707070;
-    line-height: 2.5rem;
-}
-
-.topics div {
-    max-width: 90%;
-
-}
-
-.topics a {
-    display: flex;
-    justify-content: right;
-    font-size: 1.2rem;
-    color: #707070;
-    margin-bottom: 50px;
-    transition: all 0.5s;
-}
-
-.topics a:hover {
-    color: #B66161;
-}
-
-
-
-.about h1 {
+.job h1 {
     background: #DDD1D1;
     max-width: 85%;
 }
 
-.ab-t {
-    position: relative;
-    width: 100%;
-    min-height: 800px;
-    margin-bottom: 40vw;
-
-}
-
-.ab-t p {
-    margin: 7vw 0;
-    font-size: max(1rem,4vw);
-
-}
-
-.ab-t div:first-of-type {
-    position: absolute;
-    padding: 5vw;
+.job a {
     display: block;
-    align-items: center;
-    z-index: 2;
-    width: 70vw;
-    min-width: 240px;
-    aspect-ratio: 4/5;
-    background: rgba(255, 255, 255, 0.804);
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+    font-size: 1rem;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    text-decoration: none;
 }
 
-.ab-t div:first-of-type p:last-of-type {
-    margin-bottom: 0;
+.job-con {
+    max-width: 90%;
+    margin: 0 auto;
 }
 
-.ab-t div:last-of-type {
-    z-index: 1;
-    position: absolute;
-    top: 25%;
-    bottom: auto;
-    right: 0;
-    left: auto;
-
-    width: calc(70vw + 10vw);
-    min-width: 272px;
-    min-height: 418px;
-    aspect-ratio: 4/4.85;
+.job-con img {
+    width: 100%;
 }
 
-.ab-t div:last-of-type {
-    background-image: url(./image/about.png);
-    background-position: center;
-    background-size: cover;
+.job-con p {
+    margin: 20px;
 }
 
-.ab-sp,
-.ab-su,
-.ab-au,
-.ab-wi {
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 90vh;
-    max-height: 700px;
-    margin-bottom: 200px;
-}
-
-.ab-sp {
-    background-image: url(./image/season1-sp.png);
-}
-
-.ab-su {
-    background-image: url(./image/season2-sp.png);
-}
-
-.ab-au {
-    background-image: url(./image/season3-sp.png);
-}
-
-.ab-wi {
-    background-image: url(./image/season4-sp.png);
-}
-
-.ab-sp div:first-of-type,
-.ab-su div:first-of-type,
-.ab-au div:first-of-type,
-.ab-wi div:first-of-type {
-    width: 150px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-}
-
-.ab-sp div:first-of-type,
-.ab-au div:first-of-type {
-    left: 5%;
-}
-
-.ab-su div:first-of-type,
-.ab-wi div:first-of-type {
-    right: 5%;
-    left: auto;
-}
-
-
-
-.ab-sp p,
-.ab-su p,
-.ab-au p,
-.ab-wi p {
-    writing-mode: vertical-rl;
-    font-size: 1.2rem;
-    line-height: 1.7rem;
-    letter-spacing: 0.3rem;
-    padding: 100px 15px 50px;
-    background: rgba(255, 255, 255, 0.721);
-}
-
-
-.ab-sp p::before,
-.ab-su p::before,
-.ab-au p::before,
-.ab-wi p::before {
-    position: absolute;
-    content: "";
-    background-size: cover;
-    height: 150px;
-    width: 150px;
-    top: -65px;
-}
-
-.ab-sp p::before,
-.ab-au p::before {
-    left: 0;
-    right: auto;
-}
-
-.ab-su p::before,
-.ab-wi p::before {
-    left: auto;
-    right: 0;
-}
-
-.ab-sp p::before {
-    background-image: url(./image/title1.png);
-}
-
-.ab-su p::before {
-    background-image: url(./image/title2.png);
-}
-
-.ab-au p::before {
-    background-image: url(./image/title3.png);
-}
-
-.ab-wi p::before {
-    background-image: url(./image/title4.png);
-}
-
-
-.ab-sp p::after,
-.ab-su p::after,
-.ab-au p::after,
-.ab-wi p::after {
-    position: absolute;
-    z-index: 3;
-    font-size: 4.5em;
-    font-weight: bold;
-    top: -37px;
-}
-
-.ab-sp p::after,
-.ab-au p::after {
-    left: 60px;
-    right: auto;
-}
-
-.ab-su p::after,
-.ab-wi p::after {
-    right: 60px;
-    left: auto;
-}
-
-.ab-sp p::after {
-    content: "春";
-}
-
-.ab-su p::after {
-    content: "夏";
-    color: #fff;
-}
-
-.ab-au p::after {
-    content: "秋";
-    color: #fff;
-}
-
-.ab-wi p::after {
-    content: "冬";
-    color: #fff;
-}
-
-.ab-sp div:last-of-type,
-.ab-su div:last-of-type,
-.ab-au div:last-of-type,
-.ab-wi div:last-of-type {
-    position: absolute;
-    top: 60%;
-    width: 160px;
-    height: 200px;
-    background-size: cover;
-}
-
-.ab-sp div:last-of-type,
-.ab-au div:last-of-type {
-    left: auto;
-    right: 0;
-}
-
-.ab-su div:last-of-type,
-.ab-wi div:last-of-type {
-    left: 0;
-    right: auto;
-}
-
-.ab-sp div:last-of-type {
-    background-image: url(./image/item1-1.png);
-}
-
-.ab-su div:last-of-type {
-    background-image: url(./image/item2-1.png);
-}
-
-.ab-au div:last-of-type {
-    background-image: url(./image/item3-1.png);
-}
-
-.ab-wi div:last-of-type {
-    background-image: url(./image/item4-1.png);
-}
-
-
-
-.ab-sp div:last-of-type::after,
-.ab-su div:last-of-type::after,
-.ab-au div:last-of-type::after,
-.ab-wi div:last-of-type::after {
-    position: absolute;
-    content: "";
-    background-size: cover;
-    top: 50%;
-    width: 160px;
-    height: 200px;
-}
-
-.ab-sp div:last-of-type::after,
-.ab-au div:last-of-type::after {
-    left: -60%;
-}
-
-.ab-su div:last-of-type::after,
-.ab-wi div:last-of-type::after {
-    right: -60%;
-}
-
-.ab-sp div:last-of-type::after {
-    background-image: url(./image/item1-2.png);
-}
-
-.ab-su div:last-of-type::after {
-    background-image: url(./image/item2-2.png);
-}
-
-.ab-au div:last-of-type::after {
-    background-image: url(./image/item3-2.png);
-}
-
-.ab-wi div:last-of-type::after {
-    background-image: url(./image/item4-2.png);
-}
 
 
 
@@ -1078,7 +821,7 @@ small {
     }
 
     .top {
-        height: 80vh;
+        min-height: 80vh;
         max-width: 70%;
         margin: 10vh auto 0;
         background-size: cover;
