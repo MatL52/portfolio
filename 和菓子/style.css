@@ -19,6 +19,7 @@ h1 {
     font-weight: 500;
     text-indent: 1rem;
     line-height: 65px;
+    margin: 0;
 }
 
 h2 {
@@ -30,6 +31,15 @@ h2 {
 p {
     color: #707070;
 }
+
+/* html {
+    height: -webkit-fill-available;
+}
+
+body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+} */
 
 
 .toppage {
@@ -43,6 +53,7 @@ p {
     left: auto;
     background-image: url(./image/top.png);
     background-size: cover;
+    font-size: 0;
 }
 
 .UpMove{
@@ -277,22 +288,25 @@ p {
     color: #E8380D;
 }
 
+/* :root{
+    --myheight: 100px;
+  } */
+
 .top {
-    overflow: hidden;
     position: relative;
     background-position: 20% 20%;
     top: 0;
     background-image: url(./image/hero-sp.png);
     background-size: cover;
     background-position: 80% 50%;
-    /* height: calc( var(--vh) * 100 ); */
-    height: 100dvh;
+    min-height: 100vh; /* Fallback */
+    min-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
 
 .top-para {
     position: absolute;
-    top: 20%;
+    top: 26%;
     left: 23%;
     writing-mode: vertical-rl;
 }
@@ -646,16 +660,14 @@ p {
 
 .slide {
     opacity: 0;
-    transition: all 1.5s;
+    transition: all 0.5s;
 }
 
-.adEVEN-js {
-    transform: translateX(30px);
+.y-js {
+    transform: translateY(30px);
 }
 
-.adODD-js {
-    transform: translateX(-30px);
-}
+
 
 
 
@@ -1078,7 +1090,7 @@ small {
     }
 
     .top {
-        height: 80vh;
+        min-height: 80vh;
         max-width: 70%;
         margin: 10vh auto 0;
         background-size: cover;
@@ -1148,7 +1160,9 @@ small {
 
     .ab-t {
         display: flex;
-        margin-bottom: 0px;
+        margin-bottom: 8vw;
+        aspect-ratio: 4/2;
+        min-height: auto;
     }
 
     .ab-t div:last-of-type,
@@ -1161,6 +1175,7 @@ small {
 
     .ab-t div:first-of-type p {
         font-size: 1.5vw;
+        line-height: 4vw;
         margin: 2vw;
         letter-spacing: normal;
     }
@@ -1173,6 +1188,7 @@ small {
 
     .ab-t div:last-of-type {
         max-width: 45%;
+        inset: auto;
         background-image: url(./img/vicky-ng-Ayy_K-y_dLA-unsplash.jpg);
 
     }
@@ -1189,6 +1205,9 @@ small {
         height: auto;
         aspect-ratio: 4/2;
         margin-bottom: 10vw;
+        width: 100%;
+        height: auto;
+        max-height: none;
     }
 
     .ab-sp {
