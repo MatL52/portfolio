@@ -40,13 +40,13 @@
                 <span>T</span>
             </h2>
             <div class="about-main slide">
-                <img src="./img/IMG_04150.JPG" alt="">
+                <img src="./img/IMG_1400.jpg" alt="">
                 <div class="about-para">
                     <p>当Webサイトポートフォリオをご覧いただき、ありがとうございます。</p>
-                    <p>可愛いサイトや綺麗なサイトが好きですが、スタイリッシュなサイトなどもうんぬんかんぬん</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                    <p>テキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                    <p>可愛いものや綺麗なものが好きです。</p>
+                    <p>当サイトは職業訓練校にてJavaScriptまで習ってから初めて作ったサイトです。</p>
+                    <p>フリー素材を使用し、デザイン含めて自作しています。</p>
+                    <p>実際の業務で自身の好きなように作る機会は少ないと思うので、自身の好みに合わせて作っています。</p>
                 </div>
             </div>
         </section>
@@ -135,14 +135,14 @@
             <div class="slide">
                 <ul class="works-list">
                     <li class="works-item">
-                        <a href="マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
+                        <a href="../マカロンカンプ/index.html"><img src="./img/macaron.jpg" alt=""></a>
                         <p>Macamacaron</p>
                         <p>メインページと商品一覧ページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
                     </li>
                     <li class="works-item">
-                        <a href="和菓子/index.html"><img src="./img/kitakando.png" alt=""></a>
+                        <a href="../和菓子/index.html"><img src="./img/kitakando.png" alt=""></a>
                         <p>北関堂</p>
-                        <p>メインページはデザインカンプでのコーディング。<br>その他下層ページは自身にてデザインとコーディングを実施。</p>
+                        <p>メインページはデザインカンプでのコーディング。<br>下層ページ（採用情報ページ）は自身にてデザインとコーディングを実施。</p>
                     </li>
                     <!-- <li class="works-item">
                         <a href=""><img src="./img/sodapdf-converted.jpg" alt=""></a>
@@ -213,6 +213,19 @@ $(function() {
             $('body,html').animate({scrollTop:pos},500);
             return false
         });
+
+        //ページ外リンク用偏移スクロール
+        var urlHash = location.hash;
+        if (urlHash) {
+        $('body,html').stop().scrollTop(0);
+        setTimeout(function(){
+        // ヘッダー固定の場合はヘッダーの高さを数値で入れる、固定でない場合は0
+        var headerH = $(nav).outerHeight(true);
+        var target = $(urlHash);
+        var pos = target.offset().top - headerH;
+        $('body,html').stop().animate({scrollTop:pos}, 400);
+    }, 100);
+    }
   };
 });
 
@@ -250,6 +263,15 @@ function PageTopAnime() {
                 }
             }
         }
+
+
+
+        const setFillHeight = () => {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+window.addEventListener('resize', setFillHeight);
 
 
 // セクションに偶数奇数ごとにトランスレート座標をつける
