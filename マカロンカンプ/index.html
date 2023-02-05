@@ -266,7 +266,7 @@
     $(".circle-bg").toggleClass('circleactive');
 });
 
-    $(".nav-item a,.toplogo").click(function () {//ナビゲーションのリンクがクリックされたら
+    $(".nav-item a").click(function () {//ナビゲーションのリンクがクリックされたら
     $(".sp-ham").removeClass('opn-ham');//ボタンの activeクラスを除去し
     $("#nav").removeClass('navactive');//ナビゲーションのpanelactiveクラスも除去
     $(".circle-bg").removeClass('circleactive');
@@ -297,7 +297,9 @@
             });
 
 // pc用ヘッダー色変化
-$(function () {
+$(function() {
+  if (window.matchMedia("(min-width: 1023px)").matches) {
+
         $(window).on('scroll', function () {
             if ($('.header-nav').height()  < $(this).scrollTop()) {
                 $('.header-nav').addClass('header-js');
@@ -307,7 +309,10 @@ $(function () {
                 $('.header-nav h3,a,a span').removeClass('navtext-js');
             }
     });
+  }
 });
+
+
 
 // ナビゲーションリンクを押したら滑らかに移動する
 $(function() {
@@ -317,7 +322,24 @@ $(function() {
             $('body,html').animate({scrollTop:pos},500);
             return false
     });
+
+    //ページ外リンク用偏移スクロール
+    var urlHash = location.hash;
+        if (urlHash) {
+        $('body,html').stop().scrollTop(0);
+        setTimeout(function(){
+        // ヘッダー固定の場合はヘッダーの高さを数値で入れる、固定でない場合は0
+        var headerPCH = $(nav).outerHeight(true);
+        var target = $(urlHash);
+        var pos = target.offset().top - headerPCH;
+        $('body,html').stop().animate({scrollTop:pos}, 400);
+    }, 100);
+    }
+
+
 });
+
+
 
 
 
