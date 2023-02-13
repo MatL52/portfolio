@@ -100,7 +100,7 @@ h2 span {
     display: inline-block;
     transform: translateY(-150px);
     opacity: 0;
-    transition: all 0.8s ease-out;
+
 }
 
 .active {
@@ -212,18 +212,20 @@ animation-delay: 0.15s;
 }
 
 @keyframes blur {
-0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
-5%    {text-shadow:  0 0 90px #550b0b;}
-20%   {text-shadow:  0 1px 1px #550b0b;}
-100%  {text-shadow:  0 1px 1px #550b0b;}
-}
-
-@-webkit-keyframes blur {
-0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
-5%    {text-shadow:  0 0 90px #550b0b;}
-20%   {text-shadow:  0 1px 1px #550b0b;}
-100%  {text-shadow:  0 1px 1px #550b0b;}
-}
+    0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
+    5%    {text-shadow:  0 0 90px #550b0b;}
+    15%   {opacity: 1;}
+    20%   {text-shadow:  0 0 0px #550b0b;}
+    100%  {text-shadow:  0 0 0 #550b0b;}
+    }
+    
+    @-webkit-keyframes blur {
+    0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
+    5%    {text-shadow:  0 0 90px #550b0b;}
+    15%   {opacity: 1;}
+    20%   {text-shadow:  0 1px 1px #550b0b;}
+    100%  {text-shadow:  0 1px 1px #550b0b;}
+    }
 
 
 /* ////////////   ABOUT SECTION   /////////////*/
@@ -447,30 +449,12 @@ animation-delay: 0.15s;
         top: 25vh;
         left: 8vw;
         line-height: 12vh;
-        /* opacity: 1; */
     }
 
     #top h1 span {
-        /* color: #550b0b; */
-        /* animation: none; */
-        /* -webkit-animation: none; */
+        animation: blur 6s ease-out forwards;
         -webkit-animation: blur 6s ease-out forwards;
     }
-
-    @keyframes blur {
-        0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
-        5%    {text-shadow:  0 0 90px #550b0b;}
-        20%   {text-shadow:  0 1px 1px #550b0b;}
-        100%  {text-shadow:  0 1px 1px #550b0b;}
-        }
-        
-    @-webkit-keyframes blur {
-        0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
-        5%    {text-shadow:  0 0 90px #550b0b;}
-        20%   {text-shadow:  0 1px 1px #550b0b;}
-        100%  {text-shadow:  0 1px 1px #550b0b;}
-        }
-
 
 
     #about {
