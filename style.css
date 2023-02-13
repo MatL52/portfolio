@@ -100,7 +100,7 @@ h2 span {
     display: inline-block;
     transform: translateY(-150px);
     opacity: 0;
-
+    transition: all 0.8s ease-out;
 }
 
 .active {
@@ -214,15 +214,13 @@ animation-delay: 0.15s;
 @keyframes blur {
 0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
 5%    {text-shadow:  0 0 90px #550b0b;}
-15%   {opacity: 1;}
-20%   {text-shadow:  0 0 0px #550b0b;}
-100%  {text-shadow:  0 0 0 #550b0b;}
+20%   {text-shadow:  0 1px 1px #550b0b;}
+100%  {text-shadow:  0 1px 1px #550b0b;}
 }
 
 @-webkit-keyframes blur {
 0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
 5%    {text-shadow:  0 0 90px #550b0b;}
-/* 15%   {opacity: 80;} */
 20%   {text-shadow:  0 1px 1px #550b0b;}
 100%  {text-shadow:  0 1px 1px #550b0b;}
 }
@@ -456,23 +454,21 @@ animation-delay: 0.15s;
         /* color: #550b0b; */
         /* animation: none; */
         /* -webkit-animation: none; */
-        /* -webkit-animation: blur 8s ease-out forwards; */
+        -webkit-animation: blur 6s ease-out forwards;
     }
 
     @keyframes blur {
         0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
         5%    {text-shadow:  0 0 90px #550b0b;}
-        15%   {opacity: 1;}
-        20%   {text-shadow:  0 0 0px #550b0b;}
-        100%  {text-shadow:  0 0 0 #550b0b;}
+        20%   {text-shadow:  0 1px 1px #550b0b;}
+        100%  {text-shadow:  0 1px 1px #550b0b;}
         }
         
-        @-webkit-keyframes blur {
+    @-webkit-keyframes blur {
         0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
         5%    {text-shadow:  0 0 90px #550b0b;}
-        /* 15%   {opacity: 80;} */
-        20%   {text-shadow:  0 0px 1px #550b0b;}
-        100%  {text-shadow:  0 0px 1px #550b0b;}
+        20%   {text-shadow:  0 1px 1px #550b0b;}
+        100%  {text-shadow:  0 1px 1px #550b0b;}
         }
 
 
