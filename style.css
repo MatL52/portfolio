@@ -19,7 +19,7 @@ h1,h2,h3,p,a {
     color: #550b0b;
     text-align: center;
 }
-            
+
 p {
     font-family: "Noto Sans JP";
 }
@@ -154,8 +154,7 @@ h2 span {
 
 #top {
     width: 100vw;
-    min-height: 100vh; /* Fallback */
-    min-height: calc(var(--vh, 1vh) * 100);
+    height: 100dvh;
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -446,14 +445,31 @@ animation-delay: 0.15s;
         top: 25vh;
         left: 8vw;
         line-height: 12vh;
-        opacity: 1;
+        /* opacity: 1; */
     }
 
     #top h1 span {
         /* color: #550b0b; */
         /* animation: none; */
         /* -webkit-animation: none; */
+        /* -webkit-animation: blur 8s ease-out forwards; */
     }
+
+    @keyframes blur {
+        0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
+        5%    {text-shadow:  0 0 90px #550b0b;}
+        15%   {opacity: 1;}
+        20%   {text-shadow:  0 0 0px #550b0b;}
+        100%  {text-shadow:  0 0 0 #550b0b;}
+        }
+        
+        @-webkit-keyframes blur {
+        0%    {text-shadow:  0 0 100px #550b0b; opacity:0;}
+        5%    {text-shadow:  0 0 90px #550b0b;}
+        /* 15%   {opacity: 80;} */
+        20%   {text-shadow:  0 0px 1px #550b0b;}
+        100%  {text-shadow:  0 0px 1px #550b0b;}
+        }
 
 
 
