@@ -451,8 +451,8 @@ animation-delay: 0.15s;
 
     #top h1 span {
         color: #550b0b;
-        animation: none;
-        -webkit-animation: none;
+        /* animation: none; */
+        /* -webkit-animation: none; */
     }
 
 
