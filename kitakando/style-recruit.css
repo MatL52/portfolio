@@ -1,0 +1,769 @@
+@charset "utf-8";
+
+* {
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-family:serif;
+    line-height: 2rem;
+}
+
+main {
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #707070;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    text-indent: 1rem;
+    line-height: 65px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1rem;
+    color: #857979;
+}
+
+
+p {
+    font-size: clamp(1rem, 0.642rem + 1.79vw, 1.5rem);
+    color: #707070;
+}
+
+body {
+    background-image: url(./img/back.jpeg);
+    background-color:rgba(255,255,255,0.5);
+    background-blend-mode:lighten;
+    position: relative;
+    z-index: -2;
+}
+
+
+.toppage {
+    position: fixed;
+    width: 8vh;
+    height: 8vh;
+    z-index: 99;
+    bottom: 15px;
+    right: 5%;
+    top: auto;
+    left: auto;
+    background-image: url(./image/top.png);
+    background-size: cover;
+    font-size: 0;
+}
+
+.UpMove{
+    animation: UpAnime 0.5s forwards;
+  }
+  @keyframes UpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+
+.DownMove {
+    animation: DownAnime 1s forwards;
+}
+@keyframes DownAnime{
+  from {
+    opacity: 1;
+  transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+  transform: translateY(100px);
+  }
+}
+
+.header-nav {
+    opacity: 0;
+    padding-top: 30px;
+}
+
+.header-nav.navactive {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    opacity: 1;
+    
+}
+
+.circle-bg{
+    position: fixed;
+    background: #FFF;
+    z-index:99;
+    /*丸の形*/
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /*丸のスタート位置と形状*/
+    transform: scale(0);/*scaleをはじめは0に*/
+    top:-100px;
+    left:calc(50% - 50px);
+    transition: all .6s;/*0.6秒かけてアニメーション*/
+}
+
+.circle-bg.circleactive{
+  transform: scale(50);/*クラスが付与されたらscaleを拡大*/
+}
+
+#nav.navactive {
+    display: block;
+}
+
+#nav {
+    display: none;
+      z-index: 999;
+}
+
+#nav.navactive{
+    animation-name:gnaviAnime;
+    animation-duration:1s;
+    animation-delay:.2s;/*0.2 秒遅らせて出現*/
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    @keyframes gnaviAnime{
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+    }
+    }
+
+
+.header-nav div {
+    margin: 0vh 5vw 0vh;
+}
+
+.header-nav h1 {
+    display: none;
+}
+
+.nav-list {
+    padding: 0;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    border-bottom: 1px solid #412F17;
+    max-width: 85%;
+    margin: 5vh auto 0;
+}
+
+.nav-item a {
+    color: #412F17;
+    font-size: 2rem;
+    font-weight: 400;
+    text-decoration: none;
+    padding-bottom: 2px;
+
+}
+
+.flex div p {
+    color: #412F17;
+    font-size: 2rem;
+    text-align: center;
+    margin: 50px 0 25px;
+
+}
+
+.flex div a {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+}
+
+.flex div a img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 90px;
+}
+
+
+.sp-ham {
+    position: fixed;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    width: 70px;
+    height: 65px;
+    z-index: 999;
+    border-bottom: #412F17 1px solid;
+    border-left: #412F17 1px solid;
+    background-color: #DDD1D1;
+}
+
+.sp-ham span {
+    display: inline-block;
+    transition: all 0.4s;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    border-radius: 5px;
+    background: #412F17;
+    width: 60%;
+}
+
+.sp-ham span:nth-child(1) {
+    top: 20px;
+}
+
+.sp-ham span:nth-child(2) {
+    top: 32px;
+}
+
+.sp-ham span:nth-child(3) {
+    top: 44px;
+}
+
+.sp-ham span:nth-child(3)::after {
+    position: absolute;
+    top: 5px;
+    left: -3px;
+    color: #FFF;
+
+}
+
+.opn-ham {
+    background: #DDD1D1;
+}
+
+.opn-ham span {
+    background: #412F17;
+    left: 11px;
+}
+
+.opn-ham span:nth-child(1){
+    top: 23px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 70%;
+}
+
+.opn-ham span:nth-child(2){
+    opacity: 0;
+}
+
+.opn-ham span:nth-child(3){
+    top: 35px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 70%;
+}
+
+/* toppage */
+
+.sp-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 65px;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.745);
+    border-bottom: 1px solid #412F17;
+    z-index: 98;
+}
+
+.sp-topbar span {
+    color: #E8380D;
+}
+
+
+header {
+    overflow: hidden;
+}
+
+.top {
+    position: relative;
+    z-index: -1;
+    top: 65px;
+    min-height: 250px;
+}
+
+.top::before {
+    position:fixed;
+    top:65px;
+    left:0;
+    z-index:-1;
+    width:100%;
+    min-height:295px;
+    height: 20vh;
+    background:url("./img/recruit.jpeg") no-repeat;
+    -webkit-background-size:cover,100%;
+    background-size: cover,100%;
+    background-position: center;
+    content:"";
+    aspect-ratio: 2/1;
+    opacity: 0.6;
+}
+
+.top-para {
+    position: fixed;
+    top: 65px;
+    left: auto;
+    right: 0;
+    width: 100%;
+    min-height: 185px;
+}
+
+.top-para h2 {
+    color: #fdfdfd;
+    position: fixed;
+    top: 75px;
+    right: 5%;
+    left: auto;
+    background: rgba(255, 255, 255, 0.411);
+    line-height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.15rem;
+    padding: 0;
+    text-shadow: 1px 1px 5px #2b1f1f;
+    text-align: center;
+    width: 3rem;
+    height: 160px;
+    writing-mode: vertical-rl;
+    box-shadow: rgba(54, 31, 31, 0.438) 5px 5px;
+}
+
+/* main */
+
+.job {
+    position: relative;
+    z-index: 3;
+    background-image: url(./img/back.jpeg);
+    background-color:rgba(255,255,255,0.65);
+    background-blend-mode:lighten;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+
+.job h1 {
+    background: #DDD1D1;
+    max-width: 70%;
+    font-size: clamp(1.1rem, 0.457rem + 3.21vw, 2rem);
+    line-height: 50px;
+}
+
+.job a {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #000;
+    color: #FFF;
+    font-size: 1rem;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-decoration: none;
+}
+
+.job-con {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.job-con img {
+    width: 100%;
+}
+
+.job-con p {
+    margin: 20px;
+}
+
+
+
+#footer {
+    background: #412f17;
+    text-align: center;
+}
+
+#footer p {
+    color: #FFF;
+    /* padding: 5px 0; */
+}
+
+#footer p:first-of-type {
+    padding-top: 25px;
+}
+
+#footer a {
+    display: block;
+    width: 80px;
+    margin: 20px auto 10px;
+
+}
+
+#footer a img:hover {
+    filter: sepia(35%);
+}
+#footer a img {
+    width: 80px;
+    transition: all 0.5s;
+}
+
+small {
+    color: #B66161;
+}
+
+
+
+/* 768px */
+@media screen and (min-width:768px) {
+
+    h1 {
+        line-height: 98px;
+        font-size: 3rem;
+        letter-spacing: 0.5rem;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    .header-nav.navactive {
+        position: fixed;
+        top: 0;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 500px;
+        height: 100%;
+        z-index: 999;
+        opacity: 1;   
+    }
+
+    .circle-bg.circleactive{
+        transform: scale(20);/*クラスが付与されたらscaleを拡大*/
+        z-index: 99;
+      }
+    
+    .sp-ham {
+        transform: scale(1.5);
+        transform-origin: top right;
+    }
+
+    .sp-topbar {
+        height: 98px;
+    }
+
+
+    .top {
+        top: 98px;
+        min-height: 400px;
+    }
+    
+    .top::before {
+        top:98px;
+        min-height:355px;
+    }
+    
+    .top-para {
+        top: 98px;
+        left: 50%;
+        width: 100%;
+        min-height: 355px;
+    }
+
+    .top-para h2 {
+        font-size: 3rem;
+        line-height: 4rem;
+        height: 250px;
+        width: 4rem;
+        letter-spacing: 0.5rem;
+        top: 130px;
+    }
+
+/* main */
+
+    .job {
+        margin-top: 40px;
+        padding: 40px 0;
+    }
+
+    .job h1 {
+        font-size: clamp(2.5rem, -4.047rem + 12.6vw, 3rem);
+        line-height: 98px;
+    }
+    
+    .job a {
+        font-size: 2rem;
+        width: 370px;
+        height: 90px;
+        line-height: 90px;
+    }
+    
+    .job-con {
+        padding-bottom: 80px;
+    }
+    
+    .job-con p {
+        font-size: clamp(1.5rem, -0.012rem + 3.15vw, 2rem);
+        margin: 40px;
+    }
+
+
+
+
+    #footer p {
+        font-size: 2rem;
+        line-height: 3.5rem;
+    }
+    
+    #footer a {
+        font-size: 2rem;
+        display: block;
+        width: 100px;
+        margin: 20px auto 10px;
+    }
+    #footer a img {
+        width: 100px;
+    }
+    
+    small {
+        color: #B66161;
+    }
+
+}
+
+@media screen and (min-width:1023px) {
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    /*                  top                   */
+
+    .sp-ham {
+        display: none;
+    }
+
+    .sp-topbar {
+        display: none;
+    }
+
+    .toppage {
+        width: 6vw;
+        height: 6vw;
+        bottom: 15px;
+        right: 5%;
+        animation: remove 1s ease-out  forwards;
+    }
+
+    .toppage:hover {
+        animation: move 0.4s ease-in-out  forwards;
+
+    }
+
+    @keyframes move {
+        100% {transform:translateY(-15px);}
+    }
+
+    @keyframes remove {
+        0% {transform:translateY(-15px);}
+        100% {transform:translateY(0px);}
+    }
+
+    #nav {
+        position: fixed;
+        display: block;
+        align-items: center;
+        height: 10vh;
+        width: 100vw;
+        opacity: 1;
+        transition: all 0.5s;
+        padding: 0;
+    }
+
+    .flex {
+        display: flex;
+        align-items: center;
+        height: 10vh;
+        margin: 0;
+        justify-content: center;
+    }
+
+    .flex div:last-of-type {
+        display: none;
+    }
+
+    .header-nav h1 {
+        display: block;
+        margin-right: 50px;
+        font-size: 2vw;
+    }
+
+    .header-nav h1 span {
+        color: #E8380D;
+    }
+
+    .nav-item {
+        margin: 0;
+        border: 0px;
+    }
+
+
+    #nav.header-js {
+        background-color: #DDD1D1;
+        backdrop-filter: blur(5px);
+        box-shadow: #53404080 0 2px 5px;
+    }
+    
+    .header-nav h3.navtext-js,
+    .nav-item a.navtext-js,
+    .nav-item a span.navtext-js{
+        color: #776363;
+    }
+
+    .nav-list {
+        display: flex;
+        white-space: nowrap;
+    }
+
+    .nav-item {
+        align-items: center;
+        margin-right: 3vw;
+    }
+
+    .nav-item a {
+        display: block;
+        font-size: 1.5vw;
+        margin: 0;
+        min-width: 0;
+        color: #412f17;
+        font-weight: bold;
+        transition: all 0.2s;
+    }
+
+    .nav-item a:hover {
+        opacity: 0.5;
+    }
+
+    .top {
+        top: 10vh;
+        min-height:60vh;
+        width: 2048px;
+    }
+
+    .top::before {
+        top:10vh;
+        left:0;
+        z-index:-1;
+        width:100%;
+        min-height:50vh;
+        background:url("./img/recruit.jpeg") no-repeat;
+        -webkit-background-size:cover,30%;
+        background-size: 70%,cover;
+        background-position: center;
+        content:"";
+    }
+
+    .top-para {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    .top-para h2 {
+        top: 15vh;
+        right: 25%;
+        min-height: 7vw;
+        font-size: clamp(2rem, 2vw, 3rem);
+        line-height: clamp(3rem, 2vw, 4rem);
+        width: clamp(3rem, 2vw, 4rem);
+        letter-spacing: 0.5vw;
+    }
+
+    /* main */
+
+    .job {
+        position: relative;
+        z-index: 3;
+        background-blend-mode:lighten;
+        padding: 20px 0;
+        margin-top: 20px;
+        /* max-width: 70%; */
+    }
+    
+    .wrapper {
+        width: 2048px;
+        max-width: 70%;
+        margin: 30px auto;
+    }
+
+    .job h1 {
+        background: #DDD1D1;
+        max-width: 70%;
+        font-size: clamp(1.1rem, 0.457rem + 3.21vw, 2rem);
+        line-height: 50px;
+        max-width: 70%;
+        box-shadow: rgb(54 31 31 / 44%) 5px 5px;
+    }
+    
+    .job a {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #000;
+        color: #FFF;
+        font-size: 1rem;
+        width: 200px;
+        height: 40px;
+        line-height: 40px;
+        text-decoration: none;
+        transition: all 0.2s ;
+    }
+
+    .job a:hover {
+        transform: scale(1.2);
+        background-color: #FFF;
+        color: #000;
+        border: #000 1px solid;
+        font-weight: bold;
+    }
+    
+    .job-con {
+        max-width: 80%;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        margin-top: 15px;
+    }
+    
+    .job-con img {
+        width: 100%;
+    }
+    
+    .job-con p {
+        font-size: clamp(1rem, 0.002rem + 1.56vw, 2rem);
+        margin: 20px;
+    }
+
+
+
+    #footer p {
+        font-size: 1.5vw;
+        line-height: 2.5vw;
+    }
+
+
+}
