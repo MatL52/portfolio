@@ -148,7 +148,7 @@ $(function() {
         $('.toppage').click(function(){
             var elmHash = $(this).attr('href');
             var headerH = $('.sp-topbar').outerHeight(true);
-            var pos = $(elmHash).offset().top;
+            var pos = $(elmHash).offset().top -headerH;
             $('body,html').animate({scrollTop:pos},500);
             return false
         });

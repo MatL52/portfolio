@@ -214,12 +214,12 @@ function PageTopAnime() {
                     $('.toppage').addClass('DownMove');//DownMoveというクラス名を.topbtnに付与
                 }
             }
-}
+};
 
 // ナビゲーションリンクを押したら滑らかに移動する
 $(function() {
   if (window.matchMedia("(max-width: 1023px)").matches) {
-        $('nav a').click(function(){
+        $('nav a,.toppage').click(function(){
             var elmHash = $(this).attr('href');
             var headerH = $('.sp-topbar').outerHeight(true);
             var pos = $(elmHash).offset().top - headerH;
@@ -227,25 +227,20 @@ $(function() {
             return false
         });
 
-        $('.toppage').click(function(){
-            var elmHash = $(this).attr('href');
+//ページ外リンク用偏移スクロール
+            var urlHash = location.hash;
+            if (urlHash) {
+            $('body,html').stop().scrollTop(0);
+            setTimeout(function(){
+            // ヘッダー固定の場合はヘッダーの高さを数値で入れる、固定でない場合は0
             var headerH = $('.sp-topbar').outerHeight(true);
-            var pos = $(elmHash).offset().top - headerH;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-
-
+            var target = $(urlHash);
+            var pos = target.offset().top - headerH;
+            $('body,html').stop().animate({scrollTop:pos}, 400);
+        }, 100);
+        }
   } else {
-        $('nav a').click(function(){
-            var elmHash = $(this).attr('href');
-            var headerPCH = $(nav).outerHeight(true);
-            var pos = $(elmHash).offset().top - headerPCH;
-            $('body,html').animate({scrollTop:pos},500);
-            return false
-        });
-
-        $('.toppage').click(function(){
+        $('nav a,.toppage').click(function(){
             var elmHash = $(this).attr('href');
             var headerPCH = $(nav).outerHeight(true);
             var pos = $(elmHash).offset().top - headerPCH;

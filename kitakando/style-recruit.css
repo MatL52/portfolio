@@ -54,6 +54,7 @@ body {
     background-image: url(./image/top.png);
     background-size: cover;
     font-size: 0;
+    opacity: 0;
 }
 
 .UpMove{
@@ -567,6 +568,7 @@ small {
         height: 6vw;
         bottom: 15px;
         right: 5%;
+        opacity: 1;
         animation: remove 1s ease-out  forwards;
     }
 
