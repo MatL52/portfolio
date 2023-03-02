@@ -301,8 +301,7 @@ body {
     background-size: cover;
     background-position: 80% 50%;
     min-height: 100vh; /* Fallback */
-    /* min-height: calc(var(--vh, 1vh) * 100); */
-    min-height: 100dv;
+    min-height: calc(var(--vh, 1vh) * 100);
     width: 100%;
 }
 
