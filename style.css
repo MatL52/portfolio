@@ -213,7 +213,7 @@ animation-delay: 0.15s;
 5%    {text-shadow:  0 0 90px #550b0b;}
 15%   {opacity: 1;}
 20%   {text-shadow:  0 0 0px #550b0b;}
-100%  {text-shadow:  0 0 0 #550b0b;}
+/* 100%  {text-shadow:  0 0 0 #550b0b;} */
 }
 
 @-webkit-keyframes blur {
@@ -221,7 +221,7 @@ animation-delay: 0.15s;
 5%    {text-shadow:  0 0 90px #550b0b;}
 15%   {opacity: 1;}
 20%   {text-shadow:  0 0 0px #550b0b;}
-100%  {text-shadow:  0 0 0 #550b0b;}
+/* 100%  {text-shadow:  0 0 0 #550b0b;} */
 }
 
 
