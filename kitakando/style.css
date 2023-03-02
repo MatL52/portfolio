@@ -54,6 +54,7 @@ body {
     background-image: url(./image/top.png);
     background-size: cover;
     font-size: 0;
+    opacity: 0;
 }
 
 .UpMove{
@@ -998,6 +999,7 @@ small {
         bottom: 15px;
         right: 5%;
         animation: remove 1s ease-out  forwards;
+        opacity: 1;
     }
 
     .toppage:hover {
